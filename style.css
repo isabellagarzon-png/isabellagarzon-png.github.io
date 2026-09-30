@@ -1,0 +1,867 @@
+:root { /*ES UN SELECTOR ESPECUAL QUE REPRESENTA "TODO EL DOCUMENTO"*/
+    --azul-marino:#243E6E;
+    --naranja:#FF5043;
+    --gris-claro:#EFF1F4;
+    --gris-oscuro:#BEC2C6;
+    --negro:#0D1828;
+    --blanco:#ffffff;
+    --fuente-titulos:'Outfit', sans-serif;
+    --fuente-texto: Helvetica, Arial, sans-serif;
+}
+
+body { 
+    font-family: var(--fuente-texto);
+}
+
+h1, h2, h3 { 
+    font-family: var(--fuente-titulos);
+}
+
+.logo { 
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.logo-enlace { 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+html { 
+    scroll-behavior: smooth; /*ESTABLECE UNA ANIMACION SUAVE A LA HORA DE SCROLLEAR*/
+}
+
+header {  /*CREAMOS NUESTRO HEADER*/
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--azul-marino);
+    font-family: var(--fuente-texto);
+    padding: 15px 40px;   
+    display: flex;         /*LOS ELEMENTOS VAN ENFILADOS */
+    align-items: center;   /* CENTRA EL LOGO VERTICALMENTE, EL NAV Y EL BOTON ENTRE SÍ*/
+    justify-content: space-between;  /*EMPUJA A LOS HIJOS DIRECTOS (logo, nav, botón) HACIA LOS EXTREMOS OPUESTOS */
+}
+nav a {
+    text-decoration: none;
+    color: var(--blanco);  /*USA EL COLOR DE TEXTO NORMAL EN VEZ DEL AZUL O MORADO DE UN LINK*/
+    cursor: pointer;
+    padding: 6px 18px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--naranja);
+}
+nav {  /*ORDENA EL CONTENIDO DEL HEADER DE MANERA CENTRADA*/
+    display: flex;
+    align-items: center;
+    justify-content: center;  /*CENTRA LOS H3 DENTRO DEL ESPACIO QUE EL NAV TIENE DISPONIBLE*/
+    gap: 24px;   /*ESPACIO ENTRE CADA ELEMENTO HIJO SIN NECESIDAD DE MARGENES*/
+    flex: 1;    /*le dice al nav "ocupa todo el espacio libre que quede en el header" */
+    border-radius: 30px;
+}
+
+.header-actions {
+    display:flex;
+    align-items: center;
+    gap: 16px;   
+}
+
+/* ── Botón selector de idioma ── */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--blanco);
+    border: 1.5px solid var(--blanco);
+    font-family: var(--fuente-texto);
+    font-size: 0.85rem;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.lang-switch:hover {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: var(--blanco);
+}
+
+.lang-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.menu-toggle {    /*MENU HAMBURGUESA*/
+    display: none;   /*OCULTO POR DEFECTO EN PANTALLAS PEQUEÑAS*/
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span { 
+    width: 100%;
+    height: 3px;
+    background-color: #042C53;
+    border-radius:2px;
+}
+
+.hero-texto{  /*INDICAMOS QUE EL TEXTO VA EN UNA LINEA*/
+    flex:1;
+    position: relative;
+    z-index: 2;  /*EL TEXTO QUEDA POR ENCIMA DE LA IMAGEN*/
+}
+
+.hero-texto h1{  /*ESTABLECEMOS EL TAMAÑO DEL TEXTO PRINCIPAL */
+    font-size: 3rem;
+    line-height: 1.15;
+}
+
+.hero-texto p {  /*CAMBIAMOS EL TAMAÑO DEL TEXTO DE ABAJO*/
+    font-size: 1.30rem;
+}
+
+
+.hero { /*ESTABLECE EL COLOR Y LA FORMA DEL HERO*/
+    position: relative;   /*MARCO DE REFERENCIA PARA HERO-FORMA*/
+    overflow: hidden;   /*RECORTA LO QUE SALGA DEL HERO*/
+    height:350px ;
+    margin-top: 3%;
+    display: flex;            /*POSICIONA EL TEXTO Y EL VIDEO UNO AL LADO DEL OTRO*/
+    background: linear-gradient(120deg, #ffffff 60%, var(--gris-claro) 60%);
+    align-items: center;
+    gap: 40px;
+    padding: 60px 5%;
+}
+
+.hero-forma {   /*MARCO QUE CONTIENE LA IMAGEN NARANJITA*/
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75%;
+    width: auto;
+    z-index: 1;
+}
+
+.btn-primario {
+    display: inline-block;
+    border-radius: 999px;
+    background-color: #085294;
+    color: #ffffff;
+    font-family: var(--fuente-texto);
+    padding: 12px 25px;
+    margin-left: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primario:hover {
+    background-color:var(--naranja);
+}
+
+@media (max-width: 768px) {
+
+    /* ── Header ── */
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        height: 36px;
+    }
+
+    nav {
+        display: none;     /*OCULTA EL MENU NORMAL EN PANTALLAS GRANDES*/
+    }
+
+    nav.abierto {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;   /*JUSTO DONDE TERMINA EL HEADER*/
+        left: 0;
+        right: 0;
+        background-color: #dae8f7;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .menu-toggle {
+        display: flex;     /*MUESTRA LA HAMBURGUESA*/
+    }
+
+    .lang-switch span {
+        display: none;   /* Solo muestra el icono en móvil */
+    }
+
+    .lang-switch {
+        padding: 7px 10px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        flex-direction: column; /*CAMBIA LA DIRECCION EN LA QUE FLEX ACOMODA A SUS HIJOS*/
+        text-align: center;
+        height: auto;
+        padding: 40px 20px;
+        margin-top: 0;
+    }
+
+    .hero-texto h1 {
+        font-size: 2rem;
+    }
+
+    .hero-texto p {
+        font-size: 1.05rem;
+    }
+
+    .btn-primario {
+        margin-left: 0;
+    }
+
+    /* ── Nosotros ── */
+    #nosotros h2 {
+        font-size: 1.8rem;
+        margin-left: 20px;
+    }
+
+    #nosotros p {
+        font-size: 1rem;
+        margin-left: 20px;
+    }
+
+    .pilares {
+        flex-direction: column;
+        gap: 20px;
+        margin: 24px 20px;
+    }
+
+    /* ── Que hacemos ── */
+    #que-hacemos {
+        padding: 40px 20px;
+    }
+
+    #que-hacemos h2 {
+        font-size: 1.8rem;
+    }
+
+    #que-hacemos p {
+        font-size: 1rem;
+    }
+
+    /* ── Servicios ── */
+    #servicios h2 {
+        margin-left: 20px;
+        font-size: 1.8rem;
+    }
+
+    #servicios > p {
+        margin: 16px 20px 24px 20px;
+        font-size: 1rem;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
+
+    /* ── Experiencia ── */
+    #experiencia {
+        padding: 48px 20px;
+    }
+
+    .experiencia-intro h2 {
+        font-size: 2rem;
+    }
+
+    .experiencia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experiencia-card {
+        height: 250px;
+    }
+
+    /* ── Cifras ── */
+    #cifras {
+        padding: 48px 20px;
+    }
+
+    .cifras-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .cifras-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ── Clientes ── */
+    #clientes {
+        padding: 48px 20px;
+    }
+
+    .clientes-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .cliente-logo {
+        max-height: 60px;
+    }
+
+    .cliente-item {
+        min-width: 120px;
+        padding: 12px 14px;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/*COMENZAMOS CON LA PARTE DE NOSOTROS */
+.pilares {     
+    display:flex;
+    gap: 32px;
+    margin: 48px 0;
+}
+
+#nosotros h2 {
+    font-family: var(--fuente-texto);
+    font-size: 2.5rem;
+    text-align:initial;
+    color: #042C53;
+    margin-left: 40px;
+}
+
+#nosotros p {
+    font-family: var(--fuente-texto);
+    margin-left: 40px;
+    font-size: 1.2rem;
+}
+
+#nosotros h1 {
+    font-family: var(--fuente-texto);
+    font-size: 1.1rem;
+    margin: 40px;
+}
+.pilares article { 
+    font-family: var(--fuente-texto);
+    flex: 1;      /*SE REPARTE EL ANCHO EN PARTES IGUALES PARA LAS 3 SECCIONES*/
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);  /*ESTABLECE UNA SOMBRA SUAVE PARA QUE NO SE VEA PEGADO AL FONDO*/
+/*ESE BOX SHADOW DICE: sin desplazamiento horizontal (0), 8px hacia abajo, 20px de difuminado con un negro muy trans
+parente, (6% de opacidad -> 0,6)*/
+    border: none;
+transition: transform 0.25s ease, box-shadow 0.25s ease;  /*HACE QUE SE HAGAN CAMBIOS SUAVES EN LA POSICION Y SOMBRA EN 
+0,25 SEGUNDOS EN LUGAR DE GOLPE*/
+}
+
+.pilares article:hover {
+    transform: translateY(-8px);  /*MUEVE EL ELEMENTO 8PX HACIA ARRIBA /LOS NEGATIVOS EN Y SUBEN Y LOS POSITIVOS BAJAN
+NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);  /*LA SOMBRA CRECE Y SE HACE MAS OSCURA*/
+}
+
+.pilar-icono { 
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+.pilar-icono-mision { background-color: #032d6b; }
+.pilar-icono-vision { background-color: #045453; }
+.pilar-icono-proposito { background-color: #372094; }
+
+/* SECCION QUE HACEMOS */
+#que-hacemos {
+    background-color: var(--gris-claro);
+    padding: 60px 40px;
+}
+
+#que-hacemos h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    color: var(--azul-marino);
+    margin-bottom: 24px;
+}
+
+#que-hacemos p {
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--negro);
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+
+#que-hacemos p:last-child {
+    margin-bottom: 0;
+}
+
+#servicios {
+    background-color: var(--blanco);
+    position: relative;
+    padding-top: 100px; /*PARA QUE LA OLA NO TOQUE EL TITULO DE ARRIBA*/
+}
+
+.ola { 
+    position: absolute;
+    top: -1px;   /*PEGADO JUSTO EN EL BORDE SUPERIOR DE LA SECCIO*/
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+
+#servicios h2 {
+    font-family: var(--fuente-titulos);
+    margin-left: 40px;
+    font-size: 2.5rem;
+    color: var(--azul-marino);
+}
+
+#servicios > p {
+    font-family: var(--fuente-texto);
+    font-size: 1.2rem;
+    margin: 20px 40px 40px 40px;
+    color: var(--negro);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /*ESTABLECE TRES COLUMNAS DE IGUAL ANCHO*/
+    gap: 24px;
+    margin: 40px;
+    align-items: start;
+}
+
+.servicios-grid article {
+    font-family: var(--fuente-texto);
+    background-color: var(--blanco);
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicios-grid article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+
+.servicios-grid article h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.35rem;
+    color: var(--azul-marino);
+    margin-bottom: 20px;
+}
+
+.btn-saber-mas {
+    display: inline-block;
+    border-radius: 999px;
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+    font-family: var(--fuente-texto);
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-saber-mas:hover {
+    background-color: var(--naranja);
+}
+
+.servicio-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    width: 100%;
+}
+
+.servicios-grid article.abierto .servicio-contenido {
+    max-height: 350px;
+    opacity: 1;
+}
+
+.servicio-contenido p {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--negro);
+    margin: 20px 0 0 0;
+    text-align: left;
+}
+
+/* SECCION EXPERIENCIA */
+#experiencia {
+    background-color: var(--blanco);
+    padding: 80px 40px;
+}
+
+.experiencia-intro {
+    margin-bottom: 40px;
+}
+
+.experiencia-intro h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.8rem;
+    line-height: 1.15;
+    color: var(--azul-marino);
+    margin: 0 0 16px 0;
+}
+
+.experiencia-intro p {
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    color: var(--azul-marino);
+    margin: 0;
+}
+
+.experiencia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.experiencia-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experiencia-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.experiencia-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.experiencia-card:hover .experiencia-img {
+    transform: scale(1.05);
+}
+
+.experiencia-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--azul-marino);
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+}
+
+.experiencia-card:hover .experiencia-overlay {
+    opacity: 0.5;
+}
+
+.experiencia-card h3 {
+    position: relative;
+    z-index: 2;
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--blanco);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 20px;
+    margin: 0;
+}
+
+/* ── TASK 1 — Divisor entre Servicios y Experiencia ── */
+.divisor-secciones {
+    border: none;
+    border-top: 1px solid var(--gris-oscuro);
+    margin: 0 40px;
+}
+
+/* ── TASK 2 — Sección "Inteligencia de datos en cifras" ── */
+#cifras {
+    background-color: var(--gris-claro);
+    padding: 80px 40px;
+}
+
+.cifras-intro {
+    margin-bottom: 40px;
+}
+
+.cifras-intro h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    color: var(--azul-marino);
+    margin: 0 0 12px 0;
+}
+
+.cifras-intro p {
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    color: var(--negro);
+    margin: 0;
+}
+
+.cifras-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.cifra-card {
+    background-color: var(--blanco);
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.cifra-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+
+.cifra-etiqueta {
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    color: var(--azul-marino);
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    order: 1;
+}
+
+.cifra-numero {
+    font-family: var(--fuente-titulos);
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--naranja);
+    line-height: 1.1;
+    order: 2;
+}
+
+.btn-cifra-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+    font-family: var(--fuente-titulos);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    order: 3;
+    margin-top: 16px;
+    flex-shrink: 0;
+}
+
+.btn-cifra-toggle:hover {
+    background-color: var(--naranja);
+}
+
+.cifra-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    width: 100%;
+    order: 4;
+}
+
+.cifra-card.abierto .cifra-contenido {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.cifra-contenido p {
+    font-family: var(--fuente-texto);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--negro);
+    margin: 16px 0 0 0;
+    text-align: left;
+}
+
+/* ── SECCIÓN "NUESTROS CLIENTES" ── */
+#clientes {
+    background-color: var(--blanco);
+    padding: 72px 40px;
+}
+
+.clientes-intro {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.clientes-intro h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    color: var(--azul-marino);
+    margin: 0;
+}
+
+.clientes-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Viewport: clips the track */
+.clientes-viewport {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Track: all items laid out in one row */
+.clientes-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.cliente-item {
+    width: 180px;
+    height: 100px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    box-sizing: border-box;
+}
+
+.cliente-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(40%);
+    opacity: 0.85;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.cliente-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Arrow buttons */
+.carousel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--azul-marino);
+    background-color: var(--blanco);
+    color: var(--azul-marino);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: var(--blanco);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.carousel-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* ── @media para teléfonos muy pequeños (~360px) ── */
+@media (max-width: 480px) {
+    .hero-texto h1 {
+        font-size: 1.6rem;
+    }
+
+    .cifra-numero {
+        font-size: 1.9rem;
+    }
+
+    .cliente-item {
+        min-width: 100px;
+        padding: 10px 10px;
+    }
+
+    .cliente-logo {
+        max-height: 50px;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .carousel-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
