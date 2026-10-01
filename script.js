@@ -59,57 +59,23 @@ if (document.readyState === 'loading') {
     inicializarTarjetasCifras();
 }
 
-/* CARRUSEL DE LOGOS DE CLIENTES (un logo por clic, smooth CSS transition) */
+/* CARRUSEL DE LOGOS DE CLIENTES (Continuo, automático y táctil) */
 function inicializarCarruselClientes() {
-    const track      = document.getElementById('clientes-track');
-    const btnPrev    = document.getElementById('carousel-prev');
-    const btnNext    = document.getElementById('carousel-next');
+    const track = document.getElementById('clientes-track');
+    if (!track) return;
 
-    if (!track || !btnPrev || !btnNext) return;
+    /* Permite pausar y reanudar en pantallas táctiles al tocar el carrusel */
+    track.addEventListener('touchstart', function() {
+        track.style.animationPlayState = 'paused';
+    }, { passive: true });
 
-    const items      = track.querySelectorAll('.cliente-item');
-    const total      = items.length;
-    let indiceActual = 0;
-
-    /* Calcula el ancho de un ítem incluyendo el gap lateral que hay entre items.
-       Usamos getBoundingClientRect para mayor precisión. */
-    function anchoItem() {
-        if (items.length === 0) return 0;
-        return items[0].getBoundingClientRect().width;
-    }
-
-    function actualizarCarrusel() {
-        const desplazamiento = indiceActual * anchoItem();
-        track.style.transform = 'translateX(-' + desplazamiento + 'px)';
-
-        /* Deshabilitar/habilitar flechas en los extremos */
-        btnPrev.disabled = (indiceActual === 0);
-        btnNext.disabled = (indiceActual >= total - 1);
-    }
-
-    btnPrev.addEventListener('click', function() {
-        if (indiceActual > 0) {
-            indiceActual--;
-            actualizarCarrusel();
-        }
-    });
-
-    btnNext.addEventListener('click', function() {
-        if (indiceActual < total - 1) {
-            indiceActual++;
-            actualizarCarrusel();
-        }
-    });
-
-    /* Estado inicial */
-    actualizarCarrusel();
-
-    /* Recalcular si la ventana cambia de tamaño */
-    window.addEventListener('resize', actualizarCarrusel);
+    track.addEventListener('touchend', function() {
+        track.style.animationPlayState = 'running';
+    }, { passive: true });
 }
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inicializarCarruselClientes);
 } else {
     inicializarCarruselClientes();
-}
+}
