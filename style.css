@@ -5,26 +5,26 @@
     --gris-oscuro:#BEC2C6;
     --negro:#0D1828;
     --blanco:#ffffff;
-    --fuente-titulos:'Outfit', sans-serif;
-    --fuente-texto: Helvetica, Arial, sans-serif;
+    --fuente-titulos:'Outfit', sans-serif;   /*ESTABLECE LA FUENTE PARA TITULOS*/
+    --fuente-texto: Helvetica, Arial, sans-serif;  /*ESTABLECE LA FUENTE PARA LA DEMÁS INFORMACION*/
 }
 
 body { 
-    font-family: var(--fuente-texto);
+    font-family: var(--fuente-texto);  /*ESTABLECE UNA TIPOGRAFIA ESPECIFICA PARA TODO TEXTO DESCRIPTIVO*/
 }
 
 h1, h2, h3 { 
-    font-family: var(--fuente-titulos);
+    font-family: var(--fuente-titulos);  /*ESTABLECE UNA TIPOGRAFIA ESPECIFICA PARA TODOS DIFERENTES ENCABEZADOS*/
 }
 
 .logo { 
     height: 45px;
     width: auto;
-    display: block;
+    display: block;  /*INDICA QUE EL LOGO SE MUESTRA COMO UN ELEMENTO DE BLOQUE*/
 }
 
-.logo-enlace { 
-    display: flex;
+.logo-enlace { /*TRAE AL LOGO COMO UN ENLACE DE HREF EN HTML*/
+    display: flex;  /*INDIA QUE EL LOGO SE MUESTRA COMO UN ELEMENTO DE BLOQUE*/
     align-items: center;
     text-decoration: none;
 }
@@ -34,94 +34,92 @@ html {
 }
 
 header {  /*CREAMOS NUESTRO HEADER*/
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: sticky;  /*HACE QUE EL HEADER SE MANTENGA EN LA PARTE SUPERIOR DE LA PANTALLA ASI LA PERSONA BAJE*/
+    top: 0; /*PONE AL HEADER EN LA PARTE SUPERIOR DE LA PANTALLA ASI LA PEROSNA BAJE*/
+    z-index: 100;  /*ESTABLECE QUE EL HEADER SE MANTENGA POR ENCIMA DE OTROS ELEMENTOS, EL 1OO ES UN NUMERO ALTO PARA QUE NO SE PIERDA ENTRE OTROS ELEMENTOS, LA Z INDEX ES COMO UNA CAPA, MIENTRAS MAS ALTO EL NUMERO, MAS ARRIBA SE MUESTRA EL ELEMENTO*/
     background-color: var(--azul-marino);
     font-family: var(--fuente-texto);
-    padding: 15px 40px;   
+    padding: 15px 40px;   /*ESPACIO INTERNO DEL HEADER, 15 PARA EL LARGO Y 40 PARA EL ANCHO*/
     display: flex;         /*LOS ELEMENTOS VAN ENFILADOS */
-    align-items: center;   /* CENTRA EL LOGO VERTICALMENTE, EL NAV Y EL BOTON ENTRE SÍ*/
-    justify-content: space-between;  /*EMPUJA A LOS HIJOS DIRECTOS (logo, nav, botón) HACIA LOS EXTREMOS OPUESTOS */
+    align-items: center;   /* CENTRA LOS ELEMENTOS VERTICALMENTE DENTRO DEL HEADER*/
+    justify-content: space-between;  /*ESPACIA LOS ELMENTOS DEL HEADER, EL LOGO A LA IZQUIERDA Y EL MENU A LA DERECHA, LADOS OPUESTOS*/
 }
-nav a {
+nav a {  /*ESTABLECE EL ESTILO DE LOS LINKS DEL MENU, NAV ETIQUETA DEDICADA A LOS MENUS DE NAVEGACION, A ES EL LINK*/
     text-decoration: none;
-    color: var(--blanco);  /*USA EL COLOR DE TEXTO NORMAL EN VEZ DEL AZUL O MORADO DE UN LINK*/
-    cursor: pointer;
+    color: var(--blanco); 
+    cursor: pointer;  /*INDICA QUE EL CURSOR CAMBIA A UNA MANITO, SE PUEDE PRESIONAR E INTERACTUAR CON EL*/
     padding: 6px 18px;
-    border-radius: 999px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 999px;  /*ELEMENTO DEMASIADO CURVO, HACE QUE SE VEA COMO UNA PILDORA*/
+    transition: background-color 0.2s ease, color 0.2s ease;  /*HACE QUE EL CAMBIO DE COLOR SEA SUAVE, 0.2 SEG EASE ES UNA CURVA DE VELOCIDAD QUE HACE QUE SEA MAS SUAVE EL CAMVIO DE COLOR*/
 }
 
 nav a:hover {
     background-color: var(--naranja);
 }
-nav {  /*ORDENA EL CONTENIDO DEL HEADER DE MANERA CENTRADA*/
-    display: flex;
+nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER*/
+    display: flex;  /*LOS ELEMENTOS VAN ENFILADOS*/
     align-items: center;
-    justify-content: center;  /*CENTRA LOS H3 DENTRO DEL ESPACIO QUE EL NAV TIENE DISPONIBLE*/
+    justify-content: center;  /*CENTRA LOS ELEMENTOS DEL MENU*/
     gap: 24px;   /*ESPACIO ENTRE CADA ELEMENTO HIJO SIN NECESIDAD DE MARGENES*/
-    flex: 1;    /*le dice al nav "ocupa todo el espacio libre que quede en el header" */
-    border-radius: 30px;
+    flex: 1;    /*INDICA QUE EL MENU OCUPA TODO EL ESPACIO DISPONIBLE ENTRE EL LOGO Y LOS BOTONES, HACIENDO QUE LOS ESPACIOS SEAN IGUALES. LO APROVECHA DE MANERA UNIFORME*/
 }
 
-.header-actions {
-    display:flex;
+.header-actions {  /*CONTENEDOR QUE AGRUPA EL BOTON DE IDIOMA Y EL MENU HAMBURGUESA*/
+    display:flex;   /*HACE QUE LOS ELEMENTOS SE MUESTREN EN FILA*/
     align-items: center;
-    gap: 16px;   
+    gap: 16px;   /*ESPACIO ENTRE EL BOTON DE IDIOMA Y EL MENU HAMBURGUESA*/
 }
 
-/* ── Botón selector de idioma ── */
-.lang-switch {
-    display: inline-flex;
+.lang-switch {   /*BOTON DE IDIOMA*/
+    display: inline-flex;   /*HACE QUE EL BOTON SE MUESTRE EN LINEA Y QUE SUS ELEMENTOS INTERNOS SE MUESTREN EN FILA*/
     align-items: center;
-    gap: 7px;
+    gap: 7px;   /*ESPACIOO ENTRE EL ICONO Y EL TEXTO DEL BOTON*/
     border-radius: 999px;
     background-color: transparent;
     color: var(--blanco);
-    border: 1.5px solid var(--blanco);
+    border: 1.5px solid var(--blanco);  /*ESTABLECE UN BORDE BLANCO DE 1.5 DE GROSOR*/
     font-family: var(--fuente-texto);
-    font-size: 0.85rem;
-    padding: 7px 16px;
+    font-size: 0.85rem;  /*REM ES UNA UNIDAD RELATIVA QUE SE BASA EN EL TAMAÑO DE FUENTE DEL PADRE, EN ESTE CASO EL PADRE ES EL BODY QUE TIENE UN TAMAÑO DE FUENTE DE 16PX, 0.85% ES EL 85% DE ESOS 16PX*/
+    padding: 7px 16px; 
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
+    white-space: nowrap;  /*SIGNIFICA QUE EL CONTENIDO DEL BOTON NO DEBE SALTAR A OTRA LINEA, EL TEXTO Y EL ICONO SE MANTIENEN EN UNA SOLA LINEA*/
 }
 
-.lang-switch:hover {
+.lang-switch:hover {   /*INDICA EL CAMBIO DE COLOR AL PASAR POR ENCIMA DEL BOTON DE IDIOMA*/
     background-color: var(--naranja);
     border-color: var(--naranja);
     color: var(--blanco);
 }
 
-.lang-icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
+.lang-icon {  /*ESTILO DEL ICONO DEL IDIOMA, EL ICONO ES UN SVG QUE SE MUESTRA DENTO DEL BOTON, UN SVG ES UN FORMATO DE IMAGEN, UN TIPO DE ICONO QUE PUEDE AGRANDARSE SIN PERDER CALIDAD*/
+    width: 16px;  /*ESTABLECE EL ANCHO DEL ICONO DEL IDIOMA*/
+    height: 16px;   /*ESTABLECE EL ALTO DEL ICONO*/
+    flex-shrink: 0;   /*INDICA QUE EL ICONO NO DEBE REDUCIR SU TAMAÑO, MANTIENE SU TAMAÑO ORIGINAL DE 16PX x 16PX*/
 }
 
 .menu-toggle {    /*MENU HAMBURGUESA*/
-    display: none;   /*OCULTO POR DEFECTO EN PANTALLAS PEQUEÑAS*/
-    flex-direction: column;
+    display: none;   /*OCULTA EL MENU EN PANTALLAS GRANDES, SOLO SE MUESTRA EN PANTALLAS PEQUEÑAS*/
+    flex-direction: column;   /*LOS ELEMENTOS INTERNOS SE MUESTRAN EN COLUMNA, UNO DEBAJO DEL OTRO*/
     justify-content: center;
-    gap: 5px;
+    gap: 5px;  /*ESPACIO ENTRE CADA LINEA DEL MENU HAMBURGUESA*/
     width: 28px;
     height: 20px;
     background: none;
-    border: none;
+    border: none;  
     cursor: pointer;
-    padding: 0;
+    padding: 0;   /*HACE QUE EL BOTON NO TENGA ESPACIO INTERNO, SOLO MUESTRA LAS LINEAS DEL MANU HAMBURGUESA*/
 }
 
-.menu-toggle span { 
-    width: 100%;
+.menu-toggle span {   /*ESTILO DE CADA LINEA DEL MENU HAMBURGUESA*/
+    width: 100%;   /*HACE QUE CADA LINEA DEL BOTON HAMBURGUESA OCUPE TODO EL ANCHO DEL BOTON*/
     height: 3px;
     background-color: #042C53;
     border-radius:2px;
 }
 
-.hero-texto{  /*INDICAMOS QUE EL TEXTO VA EN UNA LINEA*/
-    flex:1;
+.hero-texto{  /*AGRUPA EL TEXTO DEL HERO, LA PRIMERA SECCION*/
+    flex: 1;
     position: relative;
     z-index: 2;  /*EL TEXTO QUEDA POR ENCIMA DE LA IMAGEN*/
 }
@@ -139,22 +137,23 @@ nav {  /*ORDENA EL CONTENIDO DEL HEADER DE MANERA CENTRADA*/
 .hero { /*ESTABLECE EL COLOR Y LA FORMA DEL HERO*/
     position: relative;   /*MARCO DE REFERENCIA PARA HERO-FORMA*/
     overflow: hidden;   /*RECORTA LO QUE SALGA DEL HERO*/
-    height:350px ;
-    margin-top: 3%;
-    display: flex;            /*POSICIONA EL TEXTO Y EL VIDEO UNO AL LADO DEL OTRO*/
-    background: linear-gradient(120deg, #ffffff 60%, var(--gris-claro) 60%);
+    height: 400px;      /*ALTURA EQUILIBRADA*/
+    margin-top: 2%;
+    display: flex;            /*POSICIONA EL TEXTO Y LA FORMA UNO AL LADO DEL OTRO*/
     align-items: center;
+    background: linear-gradient(110deg, var(--gris-claro) 53%, var(--blanco) 53%);
     gap: 40px;
-    padding: 60px 5%;
+    padding: 0 5%;
 }
 
-.hero-forma {   /*MARCO QUE CONTIENE LA IMAGEN NARANJITA*/
+.hero-forma {   /*FORMA ORGANICA 3D SOBRE EL AREA BLANCA*/
     position: absolute;
-    right: -40px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 75%;
+    top: 0;
+    right: -25px;
+    height: 104%;
     width: auto;
+    object-fit: contain;
+    object-position: right top;
     z-index: 1;
 }
 
@@ -220,8 +219,13 @@ nav {  /*ORDENA EL CONTENIDO DEL HEADER DE MANERA CENTRADA*/
         flex-direction: column; /*CAMBIA LA DIRECCION EN LA QUE FLEX ACOMODA A SUS HIJOS*/
         text-align: center;
         height: auto;
-        padding: 40px 20px;
+        padding: 40px 20px 0 20px;
         margin-top: 0;
+        background: linear-gradient(180deg, var(--gris-claro) 60%, var(--blanco) 60%);
+    }
+
+    .hero-texto {
+        padding-bottom: 20px;
     }
 
     .hero-texto h1 {
@@ -230,6 +234,13 @@ nav {  /*ORDENA EL CONTENIDO DEL HEADER DE MANERA CENTRADA*/
 
     .hero-texto p {
         font-size: 1.05rem;
+    }
+
+    .hero-forma {
+        position: static;
+        height: auto;
+        max-width: 84%;
+        align-self: center;
     }
 
     .btn-primario {
@@ -391,16 +402,22 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
     margin-bottom: 16px;
+    color: var(--blanco);
 }
 
-.pilar-icono-mision { background-color: #032d6b; }
-.pilar-icono-vision { background-color: #045453; }
-.pilar-icono-proposito { background-color: #372094; }
+.pilar-svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--blanco);
+}
+
+.pilar-icono-mision { background-color: var(--azul-marino) }
+.pilar-icono-vision { background-color: var(--azul-marino); }
+.pilar-icono-proposito { background-color: var(--azul-marino); }
 
 /* SECCION QUE HACEMOS */
 #que-hacemos {
@@ -621,15 +638,13 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     margin: 0;
 }
 
-/* ── TASK 1 — Divisor entre Servicios y Experiencia ── */
-.divisor-secciones {
+.divisor-secciones { /*LINEA DIVISORA ENTRE EXPERIENCIA Y CIFRAS*/
     border: none;
     border-top: 1px solid var(--gris-oscuro);
     margin: 0 40px;
 }
 
-/* ── TASK 2 — Sección "Inteligencia de datos en cifras" ── */
-#cifras {
+#cifras { /*SECCCION CIFRAS*/
     background-color: var(--gris-claro);
     padding: 80px 40px;
 }
@@ -642,7 +657,7 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     font-family: var(--fuente-titulos);
     font-size: 2.5rem;
     color: var(--azul-marino);
-    margin: 0 0 12px 0;
+    margin: 0 0 12px 0;  /*SEPARA EL TITULO DEL PARRAFO DE ABAJO, 0 SIGNIFICA QUE NO HAY MARGEN ARRIBA NI A LOS LADOS, 12 ES LA MARGEN DE ABAJO*/
 }
 
 .cifras-intro p {
@@ -652,13 +667,13 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     margin: 0;
 }
 
-.cifras-grid {
+.cifras-grid {  /*GRID ORGANIZA LAS TARJETAS DE CIFRAS EN FILAS Y COLUMNAS*/
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);  /*INDICA QUE LA COLUMNA SE REPITE, COMO ES DE 3 ELEMENTOS, HAY 6 EN TOTAL*/
+    gap: 24px;  /*EL GAP INDICA EL ESPACIO ENTRE LAS COLUMNAS*/
 }
 
-.cifra-card {
+.cifra-card {   
     background-color: var(--blanco);
     border-radius: 20px;
     padding: 28px 24px;
@@ -742,10 +757,11 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     text-align: left;
 }
 
-/* ── SECCIÓN "NUESTROS CLIENTES" ── */
+/* ── SECCIÓN "NUESTROS CLIENTES" (Carrusel 3D Continuo) ── */
 #clientes {
     background-color: var(--blanco);
     padding: 72px 40px;
+    overflow: hidden;
 }
 
 .clientes-intro {
@@ -760,80 +776,90 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     margin: 0;
 }
 
+/* Wrapper con efecto de rueda / cilindro sobresaliente 3D */
 .clientes-carousel-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 0;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #f4f6f8 0%, var(--blanco) 25%, var(--blanco) 75%, #f4f6f8 100%);
+    box-shadow: 
+        inset 0 8px 16px rgba(0, 0, 0, 0.06),
+        inset 0 -8px 16px rgba(0, 0, 0, 0.06),
+        0 14px 32px rgba(36, 62, 110, 0.09);
+    border: 1px solid rgba(190, 194, 198, 0.4);
 }
 
-/* Viewport: clips the track */
+/* Viewport con degradado en los extremos para profundidad 3D */
 .clientes-viewport {
-    flex: 1;
+    width: 100%;
     overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
-/* Track: all items laid out in one row */
+/* Pista continua suave (Marquee infinito) */
 .clientes-track {
     display: flex;
-    transition: transform 0.4s ease;
+    width: max-content;
+    animation: carrusel-infinito 28s linear infinite;
     will-change: transform;
 }
 
+.clientes-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes carrusel-infinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Tarjetas uniformes con efecto 3D sobresaliente */
 .cliente-item {
-    width: 180px;
-    height: 100px;
+    width: 190px;
+    height: 95px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 16px;
+    padding: 14px 20px;
+    margin: 0 10px;
+    background-color: var(--blanco);
+    border-radius: 18px;
     box-sizing: border-box;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(239, 241, 244, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cliente-item:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(36, 62, 110, 0.12);
+    border-color: var(--naranja);
 }
 
 .cliente-logo {
-    width: 100%;
-    height: 100%;
+    max-width: 140px;
+    max-height: 55px;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    filter: grayscale(40%);
-    opacity: 0.85;
-    transition: filter 0.2s ease, opacity 0.2s ease;
+    filter: grayscale(25%);
+    opacity: 0.9;
+    transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-.cliente-logo:hover {
+.cliente-item:hover .cliente-logo {
     filter: grayscale(0%);
     opacity: 1;
-}
-
-/* Arrow buttons */
-.carousel-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 2px solid var(--azul-marino);
-    background-color: var(--blanco);
-    color: var(--azul-marino);
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.carousel-btn:hover {
-    background-color: var(--naranja);
-    border-color: var(--naranja);
-    color: var(--blanco);
-}
-
-.carousel-btn:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-}
-
-.carousel-btn svg {
-    width: 22px;
-    height: 22px;
 }
 
 /* ── @media para teléfonos muy pequeños (~360px) ── */
@@ -847,21 +873,14 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     }
 
     .cliente-item {
-        min-width: 100px;
-        padding: 10px 10px;
+        width: 140px;
+        height: 75px;
+        padding: 8px 12px;
+        margin: 0 6px;
     }
 
     .cliente-logo {
-        max-height: 50px;
-    }
-
-    .carousel-btn {
-        width: 32px;
-        height: 32px;
-    }
-
-    .carousel-btn svg {
-        width: 16px;
-        height: 16px;
+        max-width: 100px;
+        max-height: 40px;
     }
 }
