@@ -11,6 +11,8 @@
 
 body { 
     font-family: var(--fuente-texto);  /*ESTABLECE UNA TIPOGRAFIA ESPECIFICA PARA TODO TEXTO DESCRIPTIVO*/
+    overflow-x: hidden;
+    width: 100%;
 }
 
 h1, h2, h3 { 
@@ -36,32 +38,34 @@ html {
 header {  /*CREAMOS NUESTRO HEADER*/
     position: sticky;  /*HACE QUE EL HEADER SE MANTENGA EN LA PARTE SUPERIOR DE LA PANTALLA ASI LA PERSONA BAJE*/
     top: 0; /*PONE AL HEADER EN LA PARTE SUPERIOR DE LA PANTALLA ASI LA PEROSNA BAJE*/
-    z-index: 100;  /*ESTABLECE QUE EL HEADER SE MANTENGA POR ENCIMA DE OTROS ELEMENTOS, EL 1OO ES UN NUMERO ALTO PARA QUE NO SE PIERDA ENTRE OTROS ELEMENTOS, LA Z INDEX ES COMO UNA CAPA, MIENTRAS MAS ALTO EL NUMERO, MAS ARRIBA SE MUESTRA EL ELEMENTO*/
+    z-index: 100;  /*ESTABLECE QUE EL HEADER SE MANTENGA POR ENCIMA DE OTROS ELEMENTOS*/
     background-color: var(--azul-marino);
     font-family: var(--fuente-texto);
-    padding: 15px 40px;   /*ESPACIO INTERNO DEL HEADER, 15 PARA EL LARGO Y 40 PARA EL ANCHO*/
+    padding: 15px 40px;   /*ESPACIO INTERNO DEL HEADER*/
     display: flex;         /*LOS ELEMENTOS VAN ENFILADOS */
     align-items: center;   /* CENTRA LOS ELEMENTOS VERTICALMENTE DENTRO DEL HEADER*/
-    justify-content: space-between;  /*ESPACIA LOS ELMENTOS DEL HEADER, EL LOGO A LA IZQUIERDA Y EL MENU A LA DERECHA, LADOS OPUESTOS*/
+    justify-content: space-between;  /*ESPACIA LOS ELMENTOS DEL HEADER*/
 }
-nav a {  /*ESTABLECE EL ESTILO DE LOS LINKS DEL MENU, NAV ETIQUETA DEDICADA A LOS MENUS DE NAVEGACION, A ES EL LINK*/
+
+nav a {  /*ESTABLECE EL ESTILO DE LOS LINKS DEL MENU*/
     text-decoration: none;
     color: var(--blanco); 
-    cursor: pointer;  /*INDICA QUE EL CURSOR CAMBIA A UNA MANITO, SE PUEDE PRESIONAR E INTERACTUAR CON EL*/
+    cursor: pointer;  /*INDICA QUE EL CURSOR CAMBIA A UNA MANITO*/
     padding: 6px 18px;
     border-radius: 999px;  /*ELEMENTO DEMASIADO CURVO, HACE QUE SE VEA COMO UNA PILDORA*/
-    transition: background-color 0.2s ease, color 0.2s ease;  /*HACE QUE EL CAMBIO DE COLOR SEA SUAVE, 0.2 SEG EASE ES UNA CURVA DE VELOCIDAD QUE HACE QUE SEA MAS SUAVE EL CAMVIO DE COLOR*/
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav a:hover {
     background-color: var(--naranja);
 }
+
 nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER*/
     display: flex;  /*LOS ELEMENTOS VAN ENFILADOS*/
     align-items: center;
     justify-content: center;  /*CENTRA LOS ELEMENTOS DEL MENU*/
     gap: 24px;   /*ESPACIO ENTRE CADA ELEMENTO HIJO SIN NECESIDAD DE MARGENES*/
-    flex: 1;    /*INDICA QUE EL MENU OCUPA TODO EL ESPACIO DISPONIBLE ENTRE EL LOGO Y LOS BOTONES, HACIENDO QUE LOS ESPACIOS SEAN IGUALES. LO APROVECHA DE MANERA UNIFORME*/
+    flex: 1;    /*INDICA QUE EL MENU OCUPA TODO EL ESPACIO DISPONIBLE*/
 }
 
 .header-actions {  /*CONTENEDOR QUE AGRUPA EL BOTON DE IDIOMA Y EL MENU HAMBURGUESA*/
@@ -71,19 +75,19 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .lang-switch {   /*BOTON DE IDIOMA*/
-    display: inline-flex;   /*HACE QUE EL BOTON SE MUESTRE EN LINEA Y QUE SUS ELEMENTOS INTERNOS SE MUESTREN EN FILA*/
+    display: inline-flex;
     align-items: center;
-    gap: 7px;   /*ESPACIOO ENTRE EL ICONO Y EL TEXTO DEL BOTON*/
+    gap: 7px;
     border-radius: 999px;
     background-color: transparent;
     color: var(--blanco);
-    border: 1.5px solid var(--blanco);  /*ESTABLECE UN BORDE BLANCO DE 1.5 DE GROSOR*/
+    border: 1.5px solid var(--blanco);
     font-family: var(--fuente-texto);
-    font-size: 0.85rem;  /*REM ES UNA UNIDAD RELATIVA QUE SE BASA EN EL TAMAÑO DE FUENTE DEL PADRE, EN ESTE CASO EL PADRE ES EL BODY QUE TIENE UN TAMAÑO DE FUENTE DE 16PX, 0.85% ES EL 85% DE ESOS 16PX*/
+    font-size: 0.85rem;
     padding: 7px 16px; 
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;  /*SIGNIFICA QUE EL CONTENIDO DEL BOTON NO DEBE SALTAR A OTRA LINEA, EL TEXTO Y EL ICONO SE MANTIENEN EN UNA SOLA LINEA*/
+    white-space: nowrap;
 }
 
 .lang-switch:hover {   /*INDICA EL CAMBIO DE COLOR AL PASAR POR ENCIMA DEL BOTON DE IDIOMA*/
@@ -92,27 +96,27 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     color: var(--blanco);
 }
 
-.lang-icon {  /*ESTILO DEL ICONO DEL IDIOMA, EL ICONO ES UN SVG QUE SE MUESTRA DENTO DEL BOTON, UN SVG ES UN FORMATO DE IMAGEN, UN TIPO DE ICONO QUE PUEDE AGRANDARSE SIN PERDER CALIDAD*/
-    width: 16px;  /*ESTABLECE EL ANCHO DEL ICONO DEL IDIOMA*/
-    height: 16px;   /*ESTABLECE EL ALTO DEL ICONO*/
-    flex-shrink: 0;   /*INDICA QUE EL ICONO NO DEBE REDUCIR SU TAMAÑO, MANTIENE SU TAMAÑO ORIGINAL DE 16PX x 16PX*/
+.lang-icon {  /*ESTILO DEL ICONO DEL IDIOMA*/
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 .menu-toggle {    /*MENU HAMBURGUESA*/
-    display: none;   /*OCULTA EL MENU EN PANTALLAS GRANDES, SOLO SE MUESTRA EN PANTALLAS PEQUEÑAS*/
-    flex-direction: column;   /*LOS ELEMENTOS INTERNOS SE MUESTRAN EN COLUMNA, UNO DEBAJO DEL OTRO*/
+    display: none;   /*OCULTA EL MENU EN PANTALLAS GRANDES*/
+    flex-direction: column;
     justify-content: center;
-    gap: 5px;  /*ESPACIO ENTRE CADA LINEA DEL MENU HAMBURGUESA*/
+    gap: 5px;
     width: 28px;
     height: 20px;
     background: none;
     border: none;  
     cursor: pointer;
-    padding: 0;   /*HACE QUE EL BOTON NO TENGA ESPACIO INTERNO, SOLO MUESTRA LAS LINEAS DEL MANU HAMBURGUESA*/
+    padding: 0;
 }
 
 .menu-toggle span {   /*ESTILO DE CADA LINEA DEL MENU HAMBURGUESA*/
-    width: 100%;   /*HACE QUE CADA LINEA DEL BOTON HAMBURGUESA OCUPE TODO EL ANCHO DEL BOTON*/
+    width: 100%;
     height: 3px;
     background-color: #042C53;
     border-radius:2px;
@@ -132,7 +136,6 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 .hero-texto p {  /*CAMBIAMOS EL TAMAÑO DEL TEXTO DE ABAJO*/
     font-size: 1.30rem;
 }
-
 
 .hero { /*ESTABLECE EL COLOR Y LA FORMA DEL HERO*/
     position: relative;   /*MARCO DE REFERENCIA PARA HERO-FORMA*/
@@ -169,187 +172,11 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     cursor: pointer;
     border: none;
     text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
 .btn-primario:hover {
     background-color:var(--naranja);
-}
-
-@media (max-width: 768px) {
-
-    /* ── Header ── */
-    header {
-        padding: 12px 20px;
-    }
-
-    .logo {
-        height: 36px;
-    }
-
-    nav {
-        display: none;     /*OCULTA EL MENU NORMAL EN PANTALLAS GRANDES*/
-    }
-
-    nav.abierto {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;   /*JUSTO DONDE TERMINA EL HEADER*/
-        left: 0;
-        right: 0;
-        background-color: #dae8f7;
-        padding: 20px;
-        z-index: 10;
-    }
-
-    .menu-toggle {
-        display: flex;     /*MUESTRA LA HAMBURGUESA*/
-    }
-
-    .lang-switch span {
-        display: none;   /* Solo muestra el icono en móvil */
-    }
-
-    .lang-switch {
-        padding: 7px 10px;
-    }
-
-    /* ── Hero ── */
-    .hero {
-        flex-direction: column; /*CAMBIA LA DIRECCION EN LA QUE FLEX ACOMODA A SUS HIJOS*/
-        text-align: center;
-        height: auto;
-        padding: 40px 20px 0 20px;
-        margin-top: 0;
-        background: linear-gradient(180deg, var(--gris-claro) 60%, var(--blanco) 60%);
-    }
-
-    .hero-texto {
-        padding-bottom: 20px;
-    }
-
-    .hero-texto h1 {
-        font-size: 2rem;
-    }
-
-    .hero-texto p {
-        font-size: 1.05rem;
-    }
-
-    .hero-forma {
-        position: static;
-        height: auto;
-        max-width: 84%;
-        align-self: center;
-    }
-
-    .btn-primario {
-        margin-left: 0;
-    }
-
-    /* ── Nosotros ── */
-    #nosotros h2 {
-        font-size: 1.8rem;
-        margin-left: 20px;
-    }
-
-    #nosotros p {
-        font-size: 1rem;
-        margin-left: 20px;
-    }
-
-    .pilares {
-        flex-direction: column;
-        gap: 20px;
-        margin: 24px 20px;
-    }
-
-    /* ── Que hacemos ── */
-    #que-hacemos {
-        padding: 40px 20px;
-    }
-
-    #que-hacemos h2 {
-        font-size: 1.8rem;
-    }
-
-    #que-hacemos p {
-        font-size: 1rem;
-    }
-
-    /* ── Servicios ── */
-    #servicios h2 {
-        margin-left: 20px;
-        font-size: 1.8rem;
-    }
-
-    #servicios > p {
-        margin: 16px 20px 24px 20px;
-        font-size: 1rem;
-    }
-
-    .servicios-grid {
-        grid-template-columns: 1fr;
-        margin: 20px;
-    }
-
-    /* ── Experiencia ── */
-    #experiencia {
-        padding: 48px 20px;
-    }
-
-    .experiencia-intro h2 {
-        font-size: 2rem;
-    }
-
-    .experiencia-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experiencia-card {
-        height: 250px;
-    }
-
-    /* ── Cifras ── */
-    #cifras {
-        padding: 48px 20px;
-    }
-
-    .cifras-intro h2 {
-        font-size: 1.8rem;
-    }
-
-    .cifras-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* ── Clientes ── */
-    #clientes {
-        padding: 48px 20px;
-    }
-
-    .clientes-intro h2 {
-        font-size: 1.8rem;
-    }
-
-    .cliente-logo {
-        max-height: 60px;
-    }
-
-    .cliente-item {
-        min-width: 120px;
-        padding: 12px 14px;
-    }
-
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-    }
-
-    .carousel-btn svg {
-        width: 18px;
-        height: 18px;
-    }
 }
 
 /*COMENZAMOS CON LA PARTE DE NOSOTROS */
@@ -378,24 +205,21 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     font-size: 1.1rem;
     margin: 40px;
 }
+
 .pilares article { 
     font-family: var(--fuente-texto);
-    flex: 1;      /*SE REPARTE EL ANCHO EN PARTES IGUALES PARA LAS 3 SECCIONES*/
+    flex: 1;      /*SE REPARTE EL ANCHO EN PARTES IGUALES*/
     background-color: #ffffff;
     border-radius: 20px;
     padding: 32px 28px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);  /*ESTABLECE UNA SOMBRA SUAVE PARA QUE NO SE VEA PEGADO AL FONDO*/
-/*ESE BOX SHADOW DICE: sin desplazamiento horizontal (0), 8px hacia abajo, 20px de difuminado con un negro muy trans
-parente, (6% de opacidad -> 0,6)*/
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     border: none;
-transition: transform 0.25s ease, box-shadow 0.25s ease;  /*HACE QUE SE HAGAN CAMBIOS SUAVES EN LA POSICION Y SOMBRA EN 
-0,25 SEGUNDOS EN LUGAR DE GOLPE*/
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .pilares article:hover {
-    transform: translateY(-8px);  /*MUEVE EL ELEMENTO 8PX HACIA ARRIBA /LOS NEGATIVOS EN Y SUBEN Y LOS POSITIVOS BAJAN
-NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);  /*LA SOMBRA CRECE Y SE HACE MAS OSCURA*/
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
 }
 
 .pilar-icono { 
@@ -415,7 +239,7 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     stroke: var(--blanco);
 }
 
-.pilar-icono-mision { background-color: var(--azul-marino) }
+.pilar-icono-mision { background-color: var(--azul-marino); }
 .pilar-icono-vision { background-color: var(--azul-marino); }
 .pilar-icono-proposito { background-color: var(--azul-marino); }
 
@@ -445,6 +269,12 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     margin-bottom: 0;
 }
 
+#perspectiva h2 {
+    font-family: var(--fuente-titulos);
+    
+}
+
+/* SECCION SERVICIOS */
 #servicios {
     background-color: var(--blanco);
     position: relative;
@@ -453,7 +283,7 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
 
 .ola { 
     position: absolute;
-    top: -1px;   /*PEGADO JUSTO EN EL BORDE SUPERIOR DE LA SECCIO*/
+    top: -1px;   /*PEGADO JUSTO EN EL BORDE SUPERIOR DE LA SECCION*/
     left: 0;
     width: 100%;
     height: 100px;
@@ -657,7 +487,7 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     font-family: var(--fuente-titulos);
     font-size: 2.5rem;
     color: var(--azul-marino);
-    margin: 0 0 12px 0;  /*SEPARA EL TITULO DEL PARRAFO DE ABAJO, 0 SIGNIFICA QUE NO HAY MARGEN ARRIBA NI A LOS LADOS, 12 ES LA MARGEN DE ABAJO*/
+    margin: 0 0 12px 0;
 }
 
 .cifras-intro p {
@@ -669,8 +499,8 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
 
 .cifras-grid {  /*GRID ORGANIZA LAS TARJETAS DE CIFRAS EN FILAS Y COLUMNAS*/
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /*INDICA QUE LA COLUMNA SE REPITE, COMO ES DE 3 ELEMENTOS, HAY 6 EN TOTAL*/
-    gap: 24px;  /*EL GAP INDICA EL ESPACIO ENTRE LAS COLUMNAS*/
+    grid-template-columns: repeat(3, 1fr);  
+    gap: 24px;  
 }
 
 .cifra-card {   
@@ -862,14 +692,395 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     opacity: 1;
 }
 
-/* ── @media para teléfonos muy pequeños (~360px) ── */
+/* ──────────────────────────────────────────────────────────
+   REGLAS RESPONSIVAS (MEDIA QUERIES) AL FINAL DEL ARCHIVO
+   ────────────────────────────────────────────────────────── */
+
+/* ── 1. TABLET (769px a 1024px) ── */
+@media (max-width: 1024px) {
+    header {
+        padding: 14px 24px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        padding: 6px 12px;
+        font-size: 0.92rem;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 360px;
+        padding: 40px 4%;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-texto p {
+        font-size: 1.15rem;
+    }
+
+    .hero-forma {
+        height: 95%;
+        max-width: 48%;
+        right: -15px;
+    }
+
+    #nosotros {
+        padding: 60px 30px;
+    }
+
+    #nosotros h2 {
+        margin-left: 0;
+        font-size: 2.2rem;
+    }
+
+    #nosotros p {
+        margin-left: 0;
+        font-size: 1.1rem;
+    }
+
+    .pilares {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 36px 0;
+    }
+
+    #que-hacemos {
+        padding: 50px 30px;
+    }
+
+    #que-hacemos h2 {
+        font-size: 2.2rem;
+    }
+
+    #servicios {
+        padding-top: 90px;
+    }
+
+    #servicios h2 {
+        margin-left: 30px;
+        font-size: 2.2rem;
+    }
+
+    #servicios > p {
+        margin: 20px 30px 30px 30px;
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 30px;
+        gap: 20px;
+    }
+
+    #experiencia {
+        padding: 60px 30px;
+    }
+
+    .experiencia-intro h2 {
+        font-size: 2.4rem;
+    }
+
+    .experiencia-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .experiencia-card {
+        height: 280px;
+    }
+
+    #cifras {
+        padding: 60px 30px;
+    }
+
+    .cifras-intro h2 {
+        font-size: 2.2rem;
+    }
+
+    .cifras-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    #clientes {
+        padding: 60px 30px;
+    }
+
+    .clientes-intro h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* ── 2. MÓVIL (hasta 768px) ── */
+@media (max-width: 768px) {
+
+    /* ── Header Móvil ── */
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        height: 36px;
+    }
+
+    nav {
+        display: none;     /*OCULTA EL MENU NORMAL EN PANTALLAS PEQUEÑAS*/
+    }
+
+    nav.abierto {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;   /*JUSTO DONDE TERMINA EL HEADER*/
+        left: 0;
+        right: 0;
+        background-color: #dae8f7;
+        padding: 20px;
+        z-index: 10;
+        gap: 10px;
+    }
+
+    nav.abierto a {
+        color: var(--azul-marino);
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: flex;     /*MUESTRA LA HAMBURGUESA*/
+    }
+
+    .lang-switch span {
+        display: none;   /* Solo muestra el icono en móvil */
+    }
+
+    .lang-switch {
+        padding: 7px 10px;
+    }
+
+    /* ── Hero Móvil ── */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 36px 20px 0 20px;
+        margin-top: 0;
+        background: linear-gradient(180deg, var(--gris-claro) 55%, var(--blanco) 55%);
+        gap: 24px;
+    }
+
+    .hero-texto {
+        padding-bottom: 10px;
+        width: 100%;
+    }
+
+    .hero-texto h1 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+    }
+
+    .hero-texto h1 br {
+        display: none;  /* Evita saltos de línea forzados incómodos en móvil */
+    }
+
+    .hero-texto p {
+        font-size: 1rem;
+    }
+
+    .hero-texto p br {
+        display: none;
+    }
+
+    .hero-forma {
+        position: static;
+        height: auto;
+        max-width: 85%;
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .btn-primario {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+
+    /* ── Nosotros Móvil ── */
+    #nosotros {
+        padding: 40px 20px;
+    }
+
+    #nosotros h2 {
+        font-size: 1.8rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #nosotros p {
+        font-size: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .pilares {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 28px 0;
+    }
+
+    .pilares article {
+        padding: 24px 20px;
+        text-align: center;
+    }
+
+    .pilar-icono {
+        margin: 0 auto 16px auto;
+    }
+
+    /* ── Que hacemos Móvil ── */
+    #que-hacemos {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    #que-hacemos h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    #que-hacemos p {
+        font-size: 0.98rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    /* ── Servicios Móvil ── */
+    #servicios {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    #servicios h2 {
+        margin-left: 0;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    #servicios > p {
+        margin: 16px 20px 24px 20px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #servicios .btn-primario {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 24px auto;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        margin: 20px;
+        gap: 20px;
+    }
+
+    /* ── Experiencia Móvil ── */
+    #experiencia {
+        padding: 40px 20px;
+    }
+
+    .experiencia-intro {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .experiencia-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .experiencia-intro p {
+        font-size: 1rem;
+    }
+
+    .experiencia-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .experiencia-card {
+        height: 240px;
+    }
+
+    /* ── Cifras Móvil ── */
+    #cifras {
+        padding: 40px 20px;
+    }
+
+    .cifras-intro {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .cifras-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .cifras-intro p {
+        font-size: 1rem;
+    }
+
+    .cifras-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* ── Clientes Móvil ── */
+    #clientes {
+        padding: 40px 20px;
+    }
+
+    .clientes-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .cliente-item {
+        width: 160px;
+        height: 85px;
+        padding: 10px 14px;
+        margin: 0 8px;
+    }
+
+    .cliente-logo {
+        max-width: 120px;
+        max-height: 48px;
+    }
+}
+
+/* ── 3. TELÉFONOS PEQUEÑOS (hasta 480px) ── */
 @media (max-width: 480px) {
     .hero-texto h1 {
-        font-size: 1.6rem;
+        font-size: 1.55rem;
+    }
+
+    .hero-texto p {
+        font-size: 0.95rem;
+    }
+
+    .hero-forma {
+        max-width: 92%;
     }
 
     .cifra-numero {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 
     .cliente-item {
@@ -882,5 +1093,9 @@ NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
     .cliente-logo {
         max-width: 100px;
         max-height: 40px;
+    }
+
+    .divisor-secciones {
+        margin: 0 20px;
     }
 }
