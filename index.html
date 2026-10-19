@@ -1,38 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inteligencia de datos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>  <!--DECLARA QUE ESTE DOCUMENTO ES UNA PAGINA WEB ESCRITA EN HTML5-->
+<html lang="es">  <!--ETIQUETA PRINCIPAL QUE CONTIENE TODA LA PAGINA Y DEFINE QUE EL IDIOMA ES ESPAÑOL-->
+<head>  <!--CONTIENE CONFIGURACIONES INTERNAS Y ENLACES QUE EL NAVEGADOR UTILIZA PERO NO SE VEN EN PANTALLA-->
+  <meta charset="UTF-8">   <!--INDICA EL CONJUNTO DE CARACTERES QUE SE UTILIZA, VISUALIZAR ACENTOS, Ñ, ¿?,ETC-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--DEFINE EL AREA VISIBLE DE LA PAGINA, ESTABLECE RESPONSIVIDAD-->
+  <title>Inteligencia de datos</title>  <!--TITULO DE LA PAGINA QUE SE MUESTRA EN LA PESTAÑA DEL NAVEGADOR-->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">   <!--IMPORTA LA FUENTE DESDE GOOGLE FONTS ESTABLECIDA COMO OUTFIT,400 ES EL TEXTO NORMAL Y 600 EN NEGRITA-->
+  <link rel="stylesheet" href="style.css">  <!--IMPORTA EL ARCHIVO DE ESTILOS CSS, LO LLAMA -->
 </head>
   <!-- COMIENZO DEL CUERPO DE LA PAGINA-->
 <body>
- <header>
-  <a href="#inicio" class="logo-enlace">
-    <img src="assets/LOGOINTELIGENCIADEDATOSPOSITIVA.png" alt="Logo de la empresa" class="logo">
+ <header>  <!--ENCABEZADO DE LA PAGINA-->
+  <a href="#inicio" class="logo-enlace">  <!--TODO LO QUE QUEDE DENTRO DE A SERA CLICKEABLE, INDICA QUE EL DESTINO ESTA EN LA MISMA PAGINA, SE DESPLAZARÁ HASTA INICIO DANDOLE CLICK AL LOGO-->
+    <img src="assets/LOGOINTELIGENCIADEDATOSPOSITIVA.png" alt="Logo de la empresa" class="logo">   <!--ALT = ALERNATIVA COMO TEXTO EN CASO DE QUE LA IMAGEN NO CARGE POR EJEMPLO-->
   </a>
 
-    <nav> <!--ETIQUETA SEMANTICA QUE INDICA QUE ES UN BLOQUE DE NAVEGACION-->
-    <a href = "#inicio"> Inicio </a>
-    <a href = "#nosotros"> Nosotros </a>
-    <a href = "#servicios"> Servicios </a>
-    <a href = "#experiencia"> Experiencia </a>
-    <a href = "#encuentranos"> Encuéntranos </a>
-    <a href = "#contactanos"> Contáctanos</a>
+    <nav> <!--ETIQUETA SEMANTICA QUE INDICA QUE ES UN MENU DE NAVEGACION-->
+    <a href = "#inicio" data-i18n="nav_inicio"> Inicio </a>  <!--DATA-I18N SIRVE PARA TRADUCIR EL TEXTO, JAVAS BUSCA LOS ELEMENTOS CON LA ETIQUETA Y CAMBIA EL IDIOMA-->
+    <a href = "#nosotros" data-i18n="nav_nosotros"> Nosotros </a>
+    <a href = "#servicios" data-i18n="nav_servicios"> Servicios </a>
+    <a href = "#experiencia" data-i18n="nav_experiencia"> Experiencia </a>
+    <a href = "#perspectivas" data-i18n="nav_perspectivas"> Perspectivas </a>
+    <a href = "#contactanos" data-i18n="nav_contactanos"> Contáctanos</a>
     </nav>
 
-  <div class="header-actions">
-    <button class="lang-switch" aria-label="Cambiar idioma"><!-- BOTON DE IDIOMA -->
-      <svg class="lang-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="2" y1="12" x2="22" y2="12"/>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-      </svg>
-      <span>ES / EN / PT</span>
-    </button>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">  <!--ESTABLECEMOS MENU HAMBURGUESA-->
+  <div class="header-actions">   <!--DIV AGRUPA LOS ELEMENTOS, EN ESTE CASO LAS ACCIONES DEL HEADER-->
+    <div class="lang-dropdown">   <!-- SELECTOR DESPLEGABLE DE IDIOMA -->
+      <button class="lang-switch" id="lang-toggle-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Cambiar idioma" data-i18n-aria="aria_cambiar_idioma">   <!--BOTON QUE ABRE EL MENU DE IDIOMAS, ID HACE QUE JAVAS ENCUENTRE ESE BOTON
+        ARIA.....FALSE HACE QUE JAVAS LO IDENTIFIQUE COMO CERRADO Y TRUE CUANDO ESTE ABIERTO, ARIALABEL NOMBRE QUE LEE EL LECTOR DE PANTALLA-->
+        <svg class="lang-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">   <!--ESTABLECE EL ICONO DEL BOTON DE IDIOMA, SUS RELLENOS, CONTORNOS, POSICION, UNIDADES, GROSORES USANDO SVG-->
+          <circle cx="12" cy="12" r="10"/>  <!--CIRCULO QUE REPRESENTA EL ICONO, EL CONTORNO, SU POSICION Y SU RADIO-->
+          <line x1="2" y1="12" x2="22" y2="12"/>  <!--LINEA HORIZONTAL QUE CRUZA EL GLOBO POR LA MITAD-->
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>  <!--LISTA DE INSTRUCCIONES QUE DIBUJAN EL ICONO DEL IDIOMA-->
+        </svg>
+        <span id="lang-actual">ES</span>  <!--SPAN HACE QUE EL TEXTO SE QUEDE AL LADO DEL ICONO, ADEMAS MUESTRA EL IDIOMA ACTUAL-->
+        <svg class="lang-arrow" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">   <!--ESTABLECE LA FLECHITA DEL BOTON DEL IDIOMA-->
+          <path d="M1 1.5L6 6.5L11 1.5"/>  <!--DIBUJA EL TRAZO DE LA FLECHA QUE APUNTA HACIA ABAJO-->
+        </svg>
+      </button>
+      <ul class="lang-menu" role="listbox" aria-label="Seleccionar idioma">  <!--LISTA DE OPCIONES DE IDIOMA-->
+        <li>  <!--ELEMENTO O ITEM INDIVIDUAL DENTRO DE LA LISTA-->
+          <button type="button" class="lang-option activo" data-lang="es" role="option" aria-selected="true">  <!--BOTON PARA SELECCIONAR EL IDIOMA-->
+            <span class="lang-flag">🇪🇸</span>  <!--MUESTRA LA BANDERA DEL IDIOMA-->
+            <span class="lang-name">Español</span>  <!--NOMBRE COMPLETO DEL IDIOMA-->
+            <span class="lang-code">ES</span>  <!--ABREVIATURA O SIGLA DEL IDIOMA-->
+          </button>
+        </li>
+        <li>
+          <button type="button" class="lang-option" data-lang="en" role="option" aria-selected="false">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">English</span>
+            <span class="lang-code">EN</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="lang-option" data-lang="pt" role="option" aria-selected="false">
+            <span class="lang-flag">🇧🇷</span>
+            <span class="lang-name">Português</span>
+            <span class="lang-code">PT</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" data-i18n-aria="aria_abrir_menu">  <!--ESTABLECEMOS MENU HAMBURGUESA-->
       <span></span>   <!--CADA SPAN ES UNA LINEA DEL MENU-->
       <span></span>
       <span></span>
@@ -40,32 +70,31 @@
   </div>
 </header>
 
-  <section class="hero" id="inicio">
-    <div class="hero-texto">
-      <h1>Inteligencia que convierte <br> datos en decisiones</h1>
-      <p>Transformamos tus datos en información estratégica para impulsar<br> decisiones más inteligentes.</p>
-      <a href="#nosotros" class="btn-primario">Comencemos</a>
-    </div>
+  <section class="hero" id="inicio">  <!--SECCION PRINCIPAL O PORTADA DE LA PAGINA-->
+    <img src="assets/HEROIMAGEN2 1.svg" alt="Fondo hero Inteligencia de datos" class="hero-forma" aria-hidden="true">  <!--IMAGEN DE FONDO DECORATIVA DE LA PORTADA-->
     
-    <img src="assets/FORMAHERO.png" alt="" class="hero-forma">
+    <div class="hero-texto">  <!--CONTENEDOR QUE AGRUPA EL TEXTO Y EL BOTON DE LA PORTADA-->
+      <h1 data-i18n="hero_titulo">Inteligencia que convierte <br> datos en decisiones</h1>  <!--TITULO PRINCIPAL DE LA PAGINA, Y BR DA UN SALTO DE LINEA EN EL TEXTO-->
+      <p data-i18n="hero_descripcion">Transformamos tus datos en información estratégica para impulsar<br> decisiones más inteligentes.</p>  <!--PARRAFO PARA ESCRIBIR TEXTO NORMAL-->
+      <a href="#nosotros" class="btn-primario" data-i18n="hero_btn">Comencemos</a>  <!--BOTON PRINCIPAL DE ACCION QUE LLEVA A LA SECCION NOSOTROS-->
+    </div>
   </section>
 
 
-<section id="nosotros">
-  <h2>¿Quiénes somos?</h2>
-  <p>Nos encargamos de recopilar, procesar y analizar tu información para impulsar las mejores decisiones de tu negocio. <br>Sé parte de nuestra comunidad y entra en el mundo de la Inteligencia de datos</p>
+<section id="nosotros">  <!--SECCION DE PRESENTACION SOBRE QUIENES SOMOS-->
+  <h2 data-i18n="nosotros_titulo">¿Quiénes somos?</h2>  <!--SUBTITULO O ENCABEZADO DE SEGUNDO NIVEL PARA IDENTIFICAR UNA SECCION-->
+  <p data-i18n="nosotros_subtitulo">Nos encargamos de recopilar, procesar y analizar tu información para impulsar las mejores decisiones de tu negocio. <br>Sé parte de nuestra comunidad y entra en el mundo de la Inteligencia de datos</p>  <!--TEXTO INTRODUCTORIO DE LA SECCION-->
   
-  <div class="pilares">
-    <article>
-      <div class="pilar-icono pilar-icono-mision">
-        <svg class="pilar-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
-          <line x1="4" y1="22" x2="4" y2="15"/>
+  <div class="pilares">  <!--CONTENEDOR EN CUADRICULA QUE AGRUPA LAS TRES TARJETAS DE PILARES-->
+    <article>  <!--CONTENEDOR INDEPENDIENTE QUE AGRUPA UN TEMA COMPLETO, COMO UNA TARJETA-->
+      <div class="pilar-icono pilar-icono-mision">  <!--CONTENEDOR DEL ICONO DEL PILAR-->
+        <svg class="pilar-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">  <!--ICONO GRAFICO VECTORIAL DE LA MISION-->
+          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>  <!--DIBUJA LA BANDERA DEL ICONO-->
+          <line x1="4" y1="22" x2="4" y2="15"/>  <!--DIBUJA EL ASTA DE LA BANDERA-->
         </svg>
       </div>
-      <h3>Misión</h3>
-      <p>Transformamos grandes volúmenes de <strong>datos</strong> en <strong>información valiosa, comprensible</strong> y <strong>accionable</strong>
-      para que organizaciones tomen decisiones más <strong>acertadas</strong> y <strong>estratégicas</strong>.</p>
+      <h3 data-i18n="pilar_mision_tit">Misión</h3>  <!--TITULO DE TERCER NIVEL, SUBTITULO DE MENOR JERARQUIA DENTRO DE UNA TARJETA-->
+      <p data-i18n="pilar_mision_desc">Transformamos grandes volúmenes de datos en información valiosa, comprensible y accionable para que organizaciones tomen decisiones más acertadas y estratégicas.</p>  <!--DESCRIPCION DETALLADA DE LA MISION-->
     </article>
 
     <article>
@@ -76,8 +105,8 @@
           <path d="M10 22h4"/>
         </svg>
       </div>
-      <h3>Visión</h3>
-      <p>Buscamos la <strong>innovación estratégica</strong> en el mundo digital que ayude a las entidades, organizaciones y empresas en crecimiento.</p>
+      <h3 data-i18n="pilar_vision_tit">Visión</h3>
+      <p data-i18n="pilar_vision_desc">Buscamos la innovación estratégica en el mundo digital que ayude a las entidades, organizaciones y empresas en crecimiento.</p>
     </article>
 
     <article>
@@ -88,247 +117,468 @@
           <circle cx="12" cy="12" r="2"/>
         </svg>
       </div>
-      <h3>Propósito</h3>
-      <p>Queremos <strong>impulsar</strong> el <strong>desarrollo</strong> de esas empresas que desseen despegar en el mundo comercial con estrategias <strong>claras</strong> y <strong>rentables</strong>.</p>
+      <h3 data-i18n="pilar_proposito_tit">Propósito</h3>
+      <p data-i18n="pilar_proposito_desc">Queremos impulsar el desarrollo de esas empresas que deseen despegar en el mundo comercial con estrategias claras y rentables.</p>
     </article>
   </div>
 </section>
 
-<section id="que-hacemos">
-  <h2>¿Que hacemos?</h2>
-  <p>Creamos soluciones empresariales mediante las nuevas herramientas de la transformación digital basados en los datos, integrando todos sus sistemas de información en uno, posibilitando a la alta administración de las empresas un proceso de automatización para medir sus KPI's en tiempo real, para un análisis de sus datos AHORA.</p>
-  <p>Nuestro propósito es fusionar el conocimiento del negocio con las nuevas herramientas de la información, para automatizar las decisiones empresariales y mejorar la calidad de vida de sus colaboradores.</p>
-  <p>Hacemos que las empresas sean más competitivas, estratégicas para gestionar mejor sus beneficios económicos desde la transformación de la data financiera y comercial y la analítica avanzada con soluciones innovadoras y personalizadas.</p>
+<section id="que-hacemos">  <!--SECCION QUE EXPLICA LAS ACTIVIDADES Y ENFOQUE DE LA EMPRESA-->
+  <h2 data-i18n="que_hacemos_titulo">¿Qué hacemos?</h2>  <!--TITULO DE LA SECCION-->
+  <p data-i18n="que_hacemos_p1">Creamos soluciones empresariales mediante las nuevas herramientas de la transformación digital basados en los datos, integrando todos sus sistemas de información en uno, posibilitando a la alta administración de las empresas un proceso de automatización para medir sus KPI's en tiempo real, para un análisis de sus datos AHORA.</p>  <!--PRIMER PARRAFO SOBRE SOLUCIONES EMPRESARIALES Y AUTOMATIZACION DE KPIS-->
+  <p data-i18n="que_hacemos_p2">Nuestro propósito es fusionar el conocimiento del negocio con las nuevas herramientas de la información, para automatizar las decisiones empresariales y mejorar la calidad de vida de sus colaboradores.</p>
+  <p data-i18n="que_hacemos_p3">Hacemos que las empresas sean más competitivas, estratégicas para gestionar mejor sus beneficios económicos desde la transformación de la data financiera y comercial y la analítica avanzada con soluciones innovadoras y personalizadas.</p>
 </section>
 
-<section id="perspectiva">
-  <h2>Perspectiva de la inteligencia de datos<br>a la hora de tomar decisiones informadas</h2>
-  
+<section id="perspectivas">  <!--SECCION DE ARTICULOS Y PERSPECTIVAS DE LA INDUSTRIA-->
+  <h2 data-i18n="perspectivas_titulo">Perspectivas</h2>  <!--TITULO DE LA SECCION-->
+  <p data-i18n="perspectivas_subtitulo">Conoce más de cómo la inteligencia de datos ha impactado en el mundo empresarial y descubre cómo puede beneficiar a la tuya</p>  <!--TEXTO INTRODUCTORIO DE PERSPECTIVAS-->
+  <div class="perspectivas-grid">  <!--CUADRICULA QUE ORGANIZA LAS TARJETAS DE PERSPECTIVAS-->
+    <article class="perspectiva-tarjeta">  <!--TARJETA INDIVIDUAL DE UN ARTICULO-->
+      <h3 data-i18n="pers_card1_tit">La revolución digital en la transferencia del conocimiento</h3>  <!--TITULO DEL ARTICULO-->
+      <a class="btn-quiero-saber-mas" data-i18n="btn_quiero_saber_mas" href="perspectiva1.html">Quiero saber más</a>  <!--ENLACE PARA LEER EL ARTICULO COMPLETO-->
+    </article>
+
+    <article class="perspectiva-tarjeta">
+      <h3 data-i18n="pers_card2_tit">El Poder del Análisis de Datos con Power BI</h3>
+      <a class="btn-quiero-saber-mas" data-i18n="btn_quiero_saber_mas" href="perspectiva2.html#perspectiva-2">Quiero saber más</a>
+    </article>
+
+    <article class="perspectiva-tarjeta">
+      <h3 data-i18n="pers_card3_tit">Transformación de la toma de decisiones empresariales</h3>
+      <a class="btn-quiero-saber-mas" data-i18n="btn_quiero_saber_mas" href="perspectiva3.html#perspectiva-3">Quiero saber más</a>
+    </article>
+
+    <article class="perspectiva-tarjeta">
+      <h3 data-i18n="pers_card4_tit">El impacto del análisis de datos en la industria automotriz en Latinoamérica</h3>
+      <a class="btn-quiero-saber-mas" data-i18n="btn_quiero_saber_mas" href="perspectiva4.html#perspectiva-4">Quiero saber más</a>
+    </article>
+  </div>
 </section>
 
-<section id="servicios">
+<section id="servicios">  <!--SECCION QUE PRESENTA LOS SERVICIOS QUE OFRECE LA EMPRESA-->
   <svg class="ola" viewBox="0 0 1440 100" preserveAspectRatio="none">   <!--OLA DECORATIVA-->
-  <path d="M0,60 C360,10 1080,90 1440,40 L1440,100 L0,100 Z" fill="#BEC2C6" opacity="0.5"></path>
+  <path d="M0,60 C360,10 1080,90 1440,40 L1440,100 L0,100 Z" fill="#BEC2C6" opacity="0.5"></path>  <!--PRIMERA ONDULACION GRIS DECORATIVA-->
   <path d="M0,70 C360,30 1080,100 1440,50 L1440,100 L0,100 Z" fill="#243E6E" opacity="0.7"></path>
   <path d="M0,80 C360,50 1080,100 1440,60 L1440,100 L0,100 Z" fill="#243E6E"></path>
 </svg>
-  <h2>¿Qué ofrecemos?</h2>
-  <p>Te garantizamos una experiencia innovadora y útil para que tu empresa logre alcanzar el éxito que tanto quieres</p>
-  <a href="#contactanos" class="btn-primario">Más detalles</a>
+  <h2 data-i18n="servicios_titulo">¿Qué ofrecemos?</h2>  <!--TITULO DE LA SECCION DE SERVICIOS-->
+  <p data-i18n="servicios_subtitulo">Te garantizamos una experiencia innovadora y útil para que tu empresa logre alcanzar el éxito que tanto quieres</p>  <!--DESCRIPCION INTRODUCTORIA DE SERVICIOS-->
+  <a href="#contactanos" class="btn-primario" data-i18n="servicios_btn_detalles">Más detalles</a>  <!--BOTON PARA CONTACTAR POR MAS DETALLES-->
 
-  <div class="servicios-grid">
-    <article class="servicio-card">
-      <h3>Modelos personalizados de Inteligencia de Negocios (BI)</h3>
-      <button type="button" class="btn-saber-mas">Saber más</button>
-      <div class="servicio-contenido">
-        <p>Diseñamos modelos de BI que no solo interpretan números; anticipan movimientos. Es como tener un copiloto para tus decisiones estratégicas, además, convierte datos en conocimiento procesable, accionable y optimizado para tu empresa.</p>
+  <div class="servicios-grid">  <!--CONTENEDOR EN CUADRICULA DE TARJETAS DE SERVICIOS-->
+    <article class="servicio-card">  <!--TARJETA DE UN SERVICIO EN PARTICULAR-->
+      <h3 data-i18n="serv1_tit">Modelos personalizados de Inteligencia de Negocios (BI)</h3>  <!--NOMBRE DEL SERVICIO-->
+      <button type="button" class="btn-saber-mas" data-i18n="btn_saber_mas">Saber más</button>  <!--BOTON INTERACTIVO PARA MOSTRAR U OCULTAR EL CONTENIDO-->
+      <div class="servicio-contenido">  <!--BLOQUE DESPLEGABLE CON EL DETALLE DEL SERVICIO-->
+        <p data-i18n="serv1_desc">Diseñamos modelos de BI que no solo interpretan números; anticipan movimientos. Es como tener un copiloto para tus decisiones estratégicas, además, convierte datos en conocimiento procesable, accionable y optimizado para tu empresa.</p>  <!--TEXTO EXPLICATIVO DEL SERVICIO-->
       </div>
     </article>
 
     <article class="servicio-card">
-      <h3>Consultoría en Inteligencia de negocios (BI)</h3>
-      <button type="button" class="btn-saber-mas">Saber más</button>
+      <h3 data-i18n="serv2_tit">Consultoría en Inteligencia de negocios (BI)</h3>
+      <button type="button" class="btn-saber-mas" data-i18n="btn_saber_mas">Saber más</button>
       <div class="servicio-contenido">
-        <p>Analizamos tus operaciones, te acompañamos a identificar y explorar tus necesidades y oportunidades, además, te equipamos con herramientas de BI que no solo funcionan, sino que transforman tu empresa en una organización basada en datos.</p>
+        <p data-i18n="serv2_desc">Analizamos tus operaciones, te acompañamos a identificar y explorar tus necesidades y oportunidades, además, te equipamos con herramientas de BI que no solo funcionan, sino que transforman tu empresa en una organización basada en datos.</p>
       </div>
     </article>
 
     <article class="servicio-card">
-      <h3>Soluciones de Automatización de Procesos</h3>
-      <button type="button" class="btn-saber-mas">Saber más</button>
+      <h3 data-i18n="serv3_tit">Soluciones de Automatización de Procesos</h3>
+      <button type="button" class="btn-saber-mas" data-i18n="btn_saber_mas">Saber más</button>
       <div class="servicio-contenido">
-        <p>Automatizamos tus procesos con una precisión quirúrgica. En Inteligencia de Datos, creamos sistemas que trabajan como tú lo harías, pero más rápido, más inteligente y sin errores. Esto no es solo eficiencia, es liberarte para pensar en grande.</p>
+        <p data-i18n="serv3_desc">Automatizamos tus procesos con una precisión quirúrgica. En Inteligencia de Datos, creamos sistemas que trabajan como tú lo harías, pero más rápido, más inteligente y sin errores. Esto no es solo eficiencia, es liberarte para pensar en grande.</p>
       </div>
     </article>
   </div>
 </section>
 
-<hr class="divisor-secciones">
+<hr class="divisor-secciones">  <!--LINEA HORIZONTAL VISUAL QUE SEPARA SECCIONES-->
 
-<section id="experiencia">
-  <div class="experiencia-intro">
-    <h2>Nuestra experiencia en<br>inteligencia de Datos</h2>
-    <p>Hemos trabajado para diferentes compañías en sectores como:</p>
+<section id="experiencia">  <!--SECCION QUE MUESTRA LOS SECTORES DONDE TIENEN EXPERIENCIA-->
+  <div class="experiencia-intro">  <!--CONTENEDOR DEL ENCABEZADO DE EXPERIENCIA-->
+    <h2 data-i18n="exp_titulo">Nuestra experiencia en<br>Inteligencia de Datos</h2>  <!--TITULO DE EXPERIENCIA-->
+    <p data-i18n="exp_subtitulo">Hemos trabajado para diferentes compañías en sectores como:</p>  <!--TEXTO GUIA DE LOS SECTORES-->
   </div>
 
-  <div class="experiencia-grid">
-    <article class="experiencia-card">
-      <img src="assets/experiencia-automotriz.jpg" alt="Sector Automotriz" class="experiencia-img">
-      <div class="experiencia-overlay"></div>
-      <h3>AUTOMOTRIZ</h3>
+  <div class="experiencia-grid">  <!--CUADRICULA DE TARJETAS DE SECTORES-->
+    <article class="experiencia-card">  <!--TARJETA DE UN SECTOR CON IMAGEN Y TITULO-->
+      <img src="assets/experiencia-automotriz.jpg" alt="Sector Automotriz" class="experiencia-img">  <!--FOTOGRAFIA REPRESENTATIVA DEL SECTOR-->
+      <div class="experiencia-overlay"></div>  <!--CAPA DE SOMBRA OSCURA SOBRE LA FOTO PARA LEER MEJOR EL TEXTO-->
+      <h3 data-i18n="exp_sec_automotriz">AUTOMOTRIZ</h3>  <!--NOMBRE DEL SECTOR EN MAYUSCULAS-->
     </article>
 
     <article class="experiencia-card">
       <img src="assets/experiencia-porcino.jpg" alt="Sector Porcino" class="experiencia-img">
       <div class="experiencia-overlay"></div>
-      <h3>PORCINA</h3>
+      <h3 data-i18n="exp_sec_porcina">PORCINA</h3>
     </article>
 
     <article class="experiencia-card">
       <img src="assets/experiencia-carnica.webp" alt="Productos Cárnicos" class="experiencia-img">
       <div class="experiencia-overlay"></div>
-      <h3>PRODUCTOS CÁRNICOS</h3>
+      <h3 data-i18n="exp_sec_carnicos">PRODUCTOS CÁRNICOS</h3>
     </article>
 
     <article class="experiencia-card">
       <img src="assets/experiencia-calzado.jpg" alt="Sector Calzado" class="experiencia-img">
       <div class="experiencia-overlay"></div>
-      <h3>CALZADO</h3>
+      <h3 data-i18n="exp_sec_calzado">CALZADO</h3>
     </article>
 
     <article class="experiencia-card">
       <img src="assets/experiencia-energia.jpg" alt="Sector Energía" class="experiencia-img">
       <div class="experiencia-overlay"></div>
-      <h3>ENERGÍA</h3>
+      <h3 data-i18n="exp_sec_energia">ENERGÍA</h3>
     </article>
 
     <article class="experiencia-card">
       <img src="assets/experiencia-granos.webp" alt="Sector Agroindustria" class="experiencia-img">
       <div class="experiencia-overlay"></div>
-      <h3>AGROINDUSTRIA</h3>
+      <h3 data-i18n="exp_sec_agro">AGROINDUSTRIA</h3>
     </article>
   </div>
 </section>
 
-<section id="cifras">
-  <div class="cifras-intro">
-    <h2>Inteligencia de datos en cifras</h2>
-    <p>Conoce los resultados de nuestro trabajo y anímate a ser parte de él</p>
+<section id="cifras">  <!--SECCION DE ESTADISTICAS Y METRICAS DE EXITO-->
+  <div class="cifras-intro">  <!--CONTENEDOR DEL ENCABEZADO DE CIFRAS-->
+    <h2 data-i18n="cifras_titulo">Inteligencia de datos en cifras</h2>  <!--TITULO DE LA SECCION DE CIFRAS-->
+    <p data-i18n="cifras_subtitulo">Conoce los resultados de nuestro trabajo y anímate a ser parte de él</p>  <!--DESCRIPCION DE LAS METRICAS-->
   </div>
 
-  <div class="cifras-grid">
-    <article class="cifra-card">
-      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta">+</button>
-      <h3 class="cifra-etiqueta">Número de empresas</h3>
-      <span class="cifra-numero">10</span>
-      <div class="cifra-contenido">
-        <p>Empresas que confían en nuestra inteligencia de datos para impulsar sus decisiones estratégicas.</p>
+  <div class="cifras-grid">  <!--CUADRICULA DE TARJETAS DE CIFRAS INTERACTIVAS-->
+    <article class="cifra-card">  <!--TARJETA DE UNA CIFRA O LOGRO-->
+      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta" data-i18n-aria="aria_ampliar_tarjeta">+</button>  <!--BOTON PARA EXPANDIR O DETALLAR LA INFORMACION DE LA CIFRA-->
+      <h3 class="cifra-etiqueta" data-i18n="cifra1_etiqueta">Número de empresas</h3>  <!--TITULO O CONCEPTO DE LA METRICA-->
+      <span class="cifra-numero">10</span>  <!--NUMERO O VALOR DESTACADO-->
+      <div class="cifra-contenido">  <!--CONTENEDOR DEL TEXTO DETALLADO QUE SE ABRE AL DAR CLICK-->
+        <p data-i18n="cifra1_desc">Empresas que confían en nuestra inteligencia de datos para impulsar sus decisiones estratégicas.</p>  <!--TEXTO EXPLICATIVO DE LA CIFRA-->
       </div>
     </article>
 
     <article class="cifra-card">
-      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta">+</button>
-      <h3 class="cifra-etiqueta">Ahorro en horas</h3>
-      <span class="cifra-numero">+900 horas</span>
+      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta" data-i18n-aria="aria_ampliar_tarjeta">+</button>
+      <h3 class="cifra-etiqueta" data-i18n="cifra2_etiqueta">Ahorro en horas</h3>
+      <span class="cifra-numero" data-i18n="cifra2_numero">+900 horas</span>
       <div class="cifra-contenido">
-        <p>Horas recuperadas gracias a la automatización de procesos manuales y reportes repetitivos.</p>
+        <p data-i18n="cifra2_desc">Horas recuperadas gracias a la automatización de procesos manuales y reportes repetitivos.</p>
       </div>
     </article>
 
     <article class="cifra-card">
-      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta">+</button>
-      <h3 class="cifra-etiqueta">Procesos intervenidos</h3>
-      <span class="cifra-numero">+62 procesos</span>
+      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta" data-i18n-aria="aria_ampliar_tarjeta">+</button>
+      <h3 class="cifra-etiqueta" data-i18n="cifra3_etiqueta">Procesos intervenidos</h3>
+      <span class="cifra-numero" data-i18n="cifra3_numero">+62 procesos</span>
       <div class="cifra-contenido">
-        <p>Procesos empresariales optimizados mediante soluciones de BI y automatización personalizadas.</p>
+        <p data-i18n="cifra3_desc">Procesos empresariales optimizados mediante soluciones de BI y automatización personalizadas.</p>
       </div>
     </article>
 
     <article class="cifra-card">
-      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta">+</button>
-      <h3 class="cifra-etiqueta">ROI promedio de la empresa</h3>
+      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta" data-i18n-aria="aria_ampliar_tarjeta">+</button>
+      <h3 class="cifra-etiqueta" data-i18n="cifra4_etiqueta">ROI promedio de la empresa</h3>
       <span class="cifra-numero">80.96%</span>
       <div class="cifra-contenido">
-        <p>Retorno sobre la inversión promedio logrado por nuestros clientes tras implementar nuestras soluciones.</p>
+        <p data-i18n="cifra4_desc">Retorno sobre la inversión promedio logrado por nuestros clientes tras implementar nuestras soluciones.</p>
       </div>
     </article>
 
     <article class="cifra-card">
-      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta">+</button>
-      <h3 class="cifra-etiqueta">Reducción de tiempo en procesos</h3>
+      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta" data-i18n-aria="aria_ampliar_tarjeta">+</button>
+      <h3 class="cifra-etiqueta" data-i18n="cifra5_etiqueta">Reducción de tiempo en procesos</h3>
       <span class="cifra-numero">93%</span>
       <div class="cifra-contenido">
-        <p>Reducción media del tiempo operativo en procesos intervenidos con automatización e inteligencia de datos.</p>
+        <p data-i18n="cifra5_desc">Reducción media del tiempo operativo en procesos intervenidos con automatización e inteligencia de datos.</p>
       </div>
     </article>
 
     <article class="cifra-card">
-      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta">+</button>
-      <h3 class="cifra-etiqueta">Colaboradores impactados</h3>
+      <button type="button" class="btn-cifra-toggle" aria-expanded="false" aria-label="Ampliar tarjeta" data-i18n-aria="aria_ampliar_tarjeta">+</button>
+      <h3 class="cifra-etiqueta" data-i18n="cifra6_etiqueta">Colaboradores impactados</h3>
       <span class="cifra-numero">+50</span>
       <div class="cifra-contenido">
-        <p>Colaboradores que mejoraron su calidad de trabajo gracias a herramientas de datos accesibles y claras.</p>
+        <p data-i18n="cifra6_desc">Colaboradores que mejoraron su calidad de trabajo gracias a herramientas de datos accesibles y claras.</p>
       </div>
     </article>
   </div>
 </section>
 
-<section id="clientes">
-  <div class="clientes-intro">
-    <h2>Nuestros Clientes</h2>
+<section id="clientes">  <!--SECCION DE CLIENTES DE LA EMPRESA-->
+  <div class="clientes-intro">  <!--CONTENEDOR DEL TITULO DE CLIENTES-->
+    <h2 data-i18n="clientes_titulo">Nuestros Clientes</h2>  <!--TITULO DE LA SECCION-->
   </div>
 
-  <div class="clientes-carousel-wrapper">
-    <div class="clientes-viewport">
-      <div class="clientes-track" id="clientes-track">
-        <!-- Bloque 1 de logos -->
-        <div class="cliente-item">
-          <img src="assets/IDCLIENTESCAMINOS.png" alt="Caminos" class="cliente-logo">
+  <div class="clientes-carousel-wrapper">  <!--CONTENEDOR EXTERNO QUE PERMITE EL DESPLAZAMIENTO INFINITO-->
+    <div class="clientes-viewport">  <!--VENTANA VISIBLE DE RECORTE DEL CARRUSEL-->
+      <div class="clientes-track" id="clientes-track">  <!--CINTA CONTINUA QUE SE DESPLAZA HORIZONTALMENTE-->
+        <!-- BLOQUE 1 DE LOGOS -->
+        <div class="cliente-item">  <!--TARJETA O CONTENEDOR INDIVIDUAL DEL LOGO-->
+          <a href="https://www.caminos.com.co/es/" aria-label="Visitar el sitio de Caminos">  <!--ENLACE A LA PAGINA WEB DEL CLIENTE-->
+            <img src="assets/IDCLIENTESCAMINOS.svg" alt="Caminos" class="cliente-logo">  <!--IMAGEN VECTORIAL DEL LOGO DEL CLIENTE-->
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESFRIGOCARNES.png" alt="Frigo Carnes" class="cliente-logo">
+          <a href="https://frigocarnes.co/" aria-label="Visitar el sitio de Frigo Carnes">
+            <img src="assets/IDCLIENTESFRIGOCARNES.svg" alt="Frigo Carnes" class="cliente-logo">
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESBEMOVIL.png" alt="Bemovil" class="cliente-logo">
+          <a href="https://bemovil.net/" aria-label="Visitar el sitio de Bemovil">
+            <img src="assets/IDCLIENTESBEMOVIL.png" alt="Bemovil" class="cliente-logo">
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESDC.png" alt="D&amp;C" class="cliente-logo">
+          <img src="assets/IDCLIENTESDC.svg" alt="D&amp;C" class="cliente-logo">
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESMANUFACTURAS.png" alt="Manufacturas Infantiles" class="cliente-logo">
+          <a href="https://www.manufacturasinfantiles.com/" aria-label="Visitar el sitio de Manufacturas Infantiles">
+            <img src="assets/IDCLIENTESMANUFACTURAS.png" alt="Manufacturas Infantiles" class="cliente-logo">
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESLAESTRELLA.png" alt="La Estrella" class="cliente-logo">
+          <a href="https://laestrellasa.com/" aria-label="Visitar el sitio de La Estrella">
+            <img src="assets/IDCLIENTESLAESTRELLA.svg" alt="La Estrella" class="cliente-logo">
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESORIGENTECNO.png" alt="Origen Technologies" class="cliente-logo">
+          <a href="https://origentechnologies.com.co/" aria-label="Visitar el sitio de Origen Technologies">
+            <img src="assets/IDCLIENTESORIGENTECNO.svg" alt="Origen Technologies" class="cliente-logo">
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESCALZACOSTA.png" alt="Calzacosta" class="cliente-logo">
+          <a href="https://www.calzacosta.com.co/?srsltid=AU7gw4UHZcbJSxJegNpmiAss-SUEoE9Kf_RPj3ya9R6E-5gA0m8z0rYJ" aria-label="Visitar el sitio de Calzacosta">
+            <img src="assets/IDCLIENTESCALZACOSTA.svg" alt="Calzacosta" class="cliente-logo">
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESJUANCAMOLE.png" alt="Juancamole" class="cliente-logo">
+          <a href="https://juancamole.com/" aria-label="Visitar el sitio de Juancamole">
+            <img src="assets/IDCLIENTESJUANCAMOLE.png" alt="Juancamole" class="cliente-logo">
+          </a>
         </div>
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESCORREDORES.png" alt="Corredores de Seguros Asociados S.A." class="cliente-logo">
+          <a href="https://www.corredoresdeseguros.com/" aria-label="Visitar el sitio de Corredores de Seguros Asociados S.A.">
+            <img src="assets/IDCLIENTESCORREDORES.svg" alt="Corredores de Seguros Asociados S.A." class="cliente-logo">
+          </a>
         </div>
 
-        <!-- Bloque 2 duplicado para bucle continuo -->
+        <!-- BLOQUE 2 DUPLICADO PARA BUCLE CONTINUO -->
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESCAMINOS.png" alt="Caminos" class="cliente-logo">
+          <a href="https://www.caminos.com.co/es/" aria-label="Visitar el sitio de Caminos">
+          <img src="assets/IDCLIENTESCAMINOS.svg" alt="Caminos" class="cliente-logo">
+          </a>
         </div>
+
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESFRIGOCARNES.png" alt="Frigo Carnes" class="cliente-logo">
+          <a href="https://frigocarnes.co/" aria-label="Visitar el sitio de Frigo Carnes">
+          <img src="assets/IDCLIENTESFRIGOCARNES.svg" alt="Frigo Carnes" class="cliente-logo">
+          </a>
         </div>
+
         <div class="cliente-item">
+          <a href="https://bemovil.net/" aria-label="Visitar el sitio de Bemovil">
           <img src="assets/IDCLIENTESBEMOVIL.png" alt="Bemovil" class="cliente-logo">
+          </a>
         </div>
+
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESDC.png" alt="D&amp;C" class="cliente-logo">
+          <img src="assets/IDCLIENTESDC.svg" alt="D&amp;C" class="cliente-logo">
         </div>
+
         <div class="cliente-item">
+          <a href="https://www.manufacturasinfantiles.com/" aria-label="Visitar el sitio de Manufacturas Infantiles">
           <img src="assets/IDCLIENTESMANUFACTURAS.png" alt="Manufacturas Infantiles" class="cliente-logo">
+          </a>
         </div>
+
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESLAESTRELLA.png" alt="La Estrella" class="cliente-logo">
+          <a href="https://laestrellasa.com/" aria-label="Visitar el sitio de La Estrella">
+          <img src="assets/IDCLIENTESLAESTRELLA.svg" alt="La Estrella" class="cliente-logo">
+          </a>
         </div>
+
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESORIGENTECNO.png" alt="Origen Technologies" class="cliente-logo">
+          <a href="https://origentechnologies.com.co/" aria-label="Visitar el sitio de Origen Technologies">
+          <img src="assets/IDCLIENTESORIGENTECNO.svg" alt="Origen Technologies" class="cliente-logo">
+          </a>
         </div>
+
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESCALZACOSTA.png" alt="Calzacosta" class="cliente-logo">
+          <a href="https://www.calzacosta.com.co/?srsltid=AU7gw4UHZcbJSxJegNpmiAss-SUEoE9Kf_RPj3ya9R6E-5gA0m8z0rYJ" aria-label="Visitar el sitio de Calzacosta">
+          <img src="assets/IDCLIENTESCALZACOSTA.svg" alt="Calzacosta" class="cliente-logo">
+        </a>
         </div>
+
         <div class="cliente-item">
+          <a href="https://juancamole.com/" aria-label="Visitar el sitio de Juancamole">
           <img src="assets/IDCLIENTESJUANCAMOLE.png" alt="Juancamole" class="cliente-logo">
+          </a>
         </div>
+
         <div class="cliente-item">
-          <img src="assets/IDCLIENTESCORREDORES.png" alt="Corredores de Seguros Asociados S.A." class="cliente-logo">
+          <a href="https://www.corredoresdeseguros.com/" aria-label="Visitar el sitio de Corredores de Seguros Asociados S.A.">
+          <img src="assets/IDCLIENTESCORREDORES.svg" alt="Corredores de Seguros Asociados S.A." class="cliente-logo">
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SECCIÓN CONTÁCTANOS -->
+<section id="contactanos" class="encuentranos-seccion">  <!--SECCION DE CONTACTO Y REDES SOCIALES-->
+  <div class="encuentranos-contenedor">  <!--CONTENEDOR PRINCIPAL QUE ENMARCA EL AREA DE CONTACTO-->
+    <div class="encuentranos-rectangulo-azul">  <!--TARJETA O FONDO AZUL QUE AGRUPA LA INFORMACION Y LOS COLABORADORES-->
+      
+      <!-- PARTE IZQUIERDA: INFORMACIÓN Y REDES SOCIALES (PLACEHOLDERS) -->
+      <div class="encuentranos-col-info">  <!--COLUMNA IZQUIERDA CON LOS CANALES DIRECTOS DE COMUNICACION-->
+        <h2 class="encuentranos-titulo" data-i18n="encuentranos_titulo">Contáctanos</h2>  <!--TITULO DE CONTACTO-->
+        <p class="encuentranos-descripcion" data-i18n="encuentranos_desc">  <!--TEXTO EXPLICATIVO PARA CONTACTAR-->
+          Conecta con nosotros a través de nuestras redes oficiales o ponte en contacto directamente con nuestros colaboradores.
+        </p>
+
+        <!-- ICONOS Y ENLACES DIRECTOS (INSTAGRAM, WHATSAPP) -->
+        <div class="encuentranos-canales">  <!--CONTENEDOR DE LOS BOTONES DE REDES SOCIALES-->
+          <!-- INSTAGRAM -->
+          <a href="https://www.instagram.com/darwin_santa01/" target="_blank" rel="noopener noreferrer" class="canal-item canal-instagram" aria-label="Visitar el perfil de Instagram de Darwin Santa">  <!--ENLACE EXTERNO AL PERFIL DE INSTAGRAM-->
+            <div class="canal-icono-wrap">  <!--CONTENEDOR CIRCULAR DEL ICONO-->
+              <svg class="canal-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">  <!--ICONO VECTORIAL DE INSTAGRAM-->
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>  <!--DIBUJA UN RECTANGULO O CUADRADO EN EL GRAFICO SVG-->
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>  <!--DIBUJA EL LENTE CIRCULAR DE LA CAMARA-->
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>  <!--DIBUJA EL PUNTO DEL FLASH DE LA CAMARA-->
+              </svg>
+            </div>
+            <div class="canal-texto">  <!--CONTENEDOR DE TEXTO DEL CANAL-->
+              <span class="canal-nombre">Instagram</span>  <!--NOMBRE DE LA RED SOCIAL-->
+              <span class="canal-dato">@darwin_santa01</span>  <!--NOMBRE DE USUARIO O CUENTA-->
+            </div>
+          </a>
+
+          <!-- WHATSAPP PRINCIPAL -->
+          <a href="https://wa.me/573207825115" target="_blank" rel="noopener noreferrer" class="canal-item canal-whatsapp" aria-label="Escribir a nuestro WhatsApp general">
+            <div class="canal-icono-wrap">
+              <svg class="canal-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <div class="canal-texto">
+              <span class="canal-nombre">WhatsApp</span>
+              <span class="canal-dato">+57 320 782 5115</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- PARTE DERECHA: TARJETAS DE COLABORADORES CON FOTO CIRCULAR Y DESPLEGABLE -->
+      <div class="encuentranos-col-colaboradores">  <!--COLUMNA DERECHA QUE CONTIENE LAS TARJETAS DEL EQUIPO-->
+        
+        <!-- COLABORADOR 1 -->
+        <article class="colaborador-card" tabindex="0">  <!--TARJETA DEL PRIMER COLABORADOR-->
+          <div class="colaborador-top">  <!--PARTE SUPERIOR VISIBLE DE LA TARJETA-->
+            <div class="colaborador-circulo">  <!--CONTENEDOR REDONDO DE LA FOTO DE PERFIL-->
+              <img src="assets/JULIANFOTO 1.svg" alt="Foto colaborador 1" class="colaborador-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">  <!--FOTO DEL COLABORADOR CON CONDICION DE OCULTARSE SI NO CARGA-->
+              <div class="colaborador-avatar-fallback" style="display: none;" aria-hidden="true">  <!--ICONO DE RESPALDO SI LA FOTO NO CARGA-->
+                <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+            </div>
+            <div class="colaborador-encabezado">  <!--CONTENEDOR DEL NOMBRE Y CARGO-->
+              <h3 class="colaborador-nombre">Julián Esteban García Castaño</h3>  <!--NOMBRE COMPLETO DEL COLABORADOR-->
+              <span class="colaborador-cargo">Ingeniero de datos</span>  <!--CARGO O ROL PROFESIONAL-->
+            </div>
+            <button type="button" class="colaborador-toggle-btn" aria-expanded="false" aria-label="Desplegar información de contacto" data-i18n-aria="colab_toggle_aria">  <!--BOTON PARA EXPANDIR LA INFORMACION DE CONTACTO-->
+              <svg class="toggle-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>  <!--DIBUJA UNA LINEA CON MULTIPLES PUNTOS DE QUIEBRE EN SVG, COMO UNA FLECHA O CHEVRON-->
+              </svg>
+            </button>
+          </div>
+
+          <!-- CONTENIDO DESPLEGABLE CON INFORMACIÓN DE CONTACTO Y WHATSAPP -->
+          <div class="colaborador-desplegable">  <!--PANEL DESPLEGABLE CON LOS DATOS DE CONTACTO-->
+            <div class="colaborador-contacto-linea">  <!--FILA CON ICONO Y CORREO ELECTRONICO-->
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="colaborador-email">juliangarcia3200@gmail.com</span>  <!--DIRECCION DE CORREO ELECTRONICO-->
+            </div>
+            <div class="colaborador-contacto-linea">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <a href="https://wa.me/573015795327" target="_blank" rel="noopener noreferrer" class="colaborador-link-telefono">+57 301 579 5327</a>  <!--ENLACE DIRECTO AL NUMERO DE TELEFONO-->
+            </div>
+            <a href="https://wa.me/573207825115" target="_blank" rel="noopener noreferrer" class="btn-colaborador-whatsapp">  <!--BOTON DE ACCESO DIRECTO A CHAT DE WHATSAPP-->
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>WhatsApp: +57 301 579 5327</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- COLABORADOR 2 -->
+        <article class="colaborador-card" tabindex="0">
+          <div class="colaborador-top">
+            <div class="colaborador-circulo">
+              <img src="assets/DARWINFOTO 1.svg" alt="Foto colaborador 2" class="colaborador-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="colaborador-avatar-fallback" style="display: none;" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+            </div>
+            <div class="colaborador-encabezado">
+              <h3 class="colaborador-nombre">Darwin Santa Montoya</h3>
+              <span class="colaborador-cargo">Dueño de la empresa</span>
+            </div>
+            <button type="button" class="colaborador-toggle-btn" aria-expanded="false" aria-label="Desplegar información de contacto" data-i18n-aria="colab_toggle_aria">
+              <svg class="toggle-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- CONTENIDO DESPLEGABLE CON INFORMACIÓN DE CONTACTO Y WHATSAPP -->
+          <div class="colaborador-desplegable">
+            <div class="colaborador-contacto-linea">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="colaborador-email">programacion@inteligenciadedatos.com</span>
+            </div>
+            <div class="colaborador-contacto-linea">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <a href="https://wa.me/573207825115" target="_blank" rel="noopener noreferrer" class="colaborador-link-telefono">+57 320 782 5115</a>
+            </div>
+            <a href="https://wa.me/573207825115" target="_blank" rel="noopener noreferrer" class="btn-colaborador-whatsapp">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>WhatsApp: +57 320 782 5115</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+    <!-- BARRA INFERIOR / COPYRIGHT Y POLÍTICA DE PRIVACIDAD -->
+    <div class="footer-bottom">  <!--BARRA INFERIOR DEL PIE DE PAGINA-->
+      <p class="footer-copyright" data-i18n="footer_copyright">© 2025 Todos los derechos reservados Inteligenciadedatos.com</p>  <!--TEXTO DE DERECHOS DE AUTOR-->
+      <a href="politicadeprivacidad.html" class="footer-link-privacidad" data-i18n="footer_privacidad">Política de privacidad</a>  <!--ENLACE A LA PAGINA DE POLITICA DE PRIVACIDAD-->
+    </div>
+
+  </div>
+</section>
+
+<script src="translations.js"></script>  <!--CONECTA Y EJECUTA UN ARCHIVO DE JAVASCRIPT EXTERNO EN LA PAGINA-->
 <script src="script.js"></script>
 </body>
 </html>

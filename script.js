@@ -78,4 +78,39 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inicializarCarruselClientes);
 } else {
     inicializarCarruselClientes();
-}
+}
+
+/* TARJETAS DE COLABORADORES (EXPANDIR / DESPLEGAR INFORMACIÓN DE CONTACTO) */
+function inicializarTarjetasColaboradores() {
+    const tarjetasColaborador = document.querySelectorAll('.colaborador-card');
+    tarjetasColaborador.forEach(function(tarjeta) {
+        const btnToggle = tarjeta.querySelector('.colaborador-toggle-btn');
+        
+        function toggleTarjeta(e) {
+            // Si el clic fue en un enlace (como el botón directo de WhatsApp), permitir su acción normal
+            if (e.target.closest('a')) return;
+
+            const estaAbierta = tarjeta.classList.toggle('abierto');
+            if (btnToggle) {
+                btnToggle.setAttribute('aria-expanded', estaAbierta ? 'true' : 'false');
+            }
+        }
+
+        tarjeta.addEventListener('click', toggleTarjeta);
+
+        // Soporte de teclado para accesibilidad (Enter y Barra espaciadora)
+        tarjeta.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                if (e.target.closest('a')) return;
+                e.preventDefault();
+                toggleTarjeta(e);
+            }
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inicializarTarjetasColaboradores);
+} else {
+    inicializarTarjetasColaboradores();
+}

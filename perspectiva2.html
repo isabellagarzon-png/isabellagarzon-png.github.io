@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perspectivas | Inteligencia de datos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html#inicio" class="logo-enlace">
+      <img src="assets/LOGOINTELIGENCIADEDATOSPOSITIVA.png" alt="Logo de la empresa" class="logo">
+    </a>
+
+    <nav>
+      <a href="index.html#inicio" data-i18n="nav_inicio">Inicio</a>
+      <a href="index.html#nosotros" data-i18n="nav_nosotros">Nosotros</a>
+      <a href="index.html#servicios" data-i18n="nav_servicios">Servicios</a>
+      <a href="index.html#experiencia" data-i18n="nav_experiencia">Experiencia</a>
+      <a href="index.html#perspectivas" data-i18n="nav_perspectivas">Perspectivas</a>
+      <a href="index.html#contactanos" data-i18n="nav_contactanos">Contáctanos</a>
+    </nav>
+
+    <div class="header-actions">
+          <!-- SELECTOR DESPLEGABLE DE IDIOMA -->
+    <div class="lang-dropdown">
+      <button class="lang-switch" id="lang-toggle-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Cambiar idioma" data-i18n-aria="aria_cambiar_idioma">
+        <svg class="lang-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span id="lang-actual">ES</span>
+        <svg class="lang-arrow" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M1 1.5L6 6.5L11 1.5"/>
+        </svg>
+      </button>
+      <ul class="lang-menu" role="listbox" aria-label="Seleccionar idioma">
+        <li>
+          <button type="button" class="lang-option activo" data-lang="es" role="option" aria-selected="true">
+            <span class="lang-flag">🇪🇸</span>
+            <span class="lang-name">Español</span>
+            <span class="lang-code">ES</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="lang-option" data-lang="en" role="option" aria-selected="false">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">English</span>
+            <span class="lang-code">EN</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="lang-option" data-lang="pt" role="option" aria-selected="false">
+            <span class="lang-flag">🇧🇷</span>
+            <span class="lang-name">Português</span>
+            <span class="lang-code">PT</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" data-i18n-aria="aria_abrir_menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+<main>
+  <section id="perspectiva">
+    <h1 data-i18n="perspectiva_general_titulo">Perspectivas de inteligencia de datos</h1>
+    <div class="perspectiva-detalles">
+      <article class="perspectiva-detalle perspectiva-articulo" id="perspectiva-2">
+        <header class="perspectiva-articulo-cabecera">
+          <h2 class="perspectiva-titulo-pildora" data-i18n="p2_titulo">El poder del análisis con Power BI</h2>
+        </header>
+
+        <div class="perspectiva-contenido">
+          <p class="perspectiva-introduccion" data-i18n="p2_intro">En un entorno empresarial cada vez más competitivo, las decisiones basadas en datos se han convertido en un factor beneficioso clave para el éxito de las empresas. Herramientas como Power BI han revolucionado la forma en que las organizaciones analizan la información y generan estrategias, permitiendo no solo optimizar recursos, sino también incrementar significativamente sus utilidades.</p>
+
+          <section class="perspectiva-bloque">
+            <h3 data-i18n="p2_subtit1">El rol del análisis de datos en la toma de decisiones</h3>
+            <p data-i18n="p2_p1">El análisis de datos se ha posicionado como el pilar de la gestión empresarial moderna. Al recopilar, procesar y visualizar grandes volúmenes de información, las empresas pueden identificar patrones, prever tendencias y tomar decisiones fundamentadas. Entre los beneficios más destacados se encuentran:</p>
+            <ol>
+              <li data-i18n="p2_li1_1"><strong>Identificación de oportunidades:</strong> El acceso a datos en tiempo real permite descubrir nuevas oportunidades de negocio y adaptarse rápidamente a los cambios del mercado.</li>
+              <li data-i18n="p2_li1_2"><strong>Reducción de costos:</strong> El análisis de datos ayuda a optimizar procesos operativos y minimizar gastos innecesarios.</li>
+              <li data-i18n="p2_li1_3"><strong>Mejora en la experiencia del cliente:</strong> Al comprender mejor las necesidades y preferencias de los clientes, las empresas pueden ofrecer productos y servicios personalizados.</li>
+              <li data-i18n="p2_li1_4"><strong>Medición de resultados:</strong> Las herramientas de visualización de datos permiten evaluar el impacto de las decisiones y ajustar las estrategias en consecuencia.</li>
+            </ol>
+          </section>
+
+          <section class="perspectiva-bloque">
+            <h3 data-i18n="p2_subtit2">Power BI: la herramienta clave para el análisis empresarial</h3>
+            <p data-i18n="p2_p2">Power BI se ha consolidado como una de las plataformas más potentes y accesibles para el análisis de datos. Sus principales características incluyen:</p>
+            <ul>
+              <li data-i18n="p2_li2_1"><strong>Visualizaciones intuitivas:</strong> La posibilidad de crear dashboards interactivos facilita la interpretación de datos complejos.</li>
+              <li data-i18n="p2_li2_2"><strong>Integración:</strong> Power BI se conecta con una amplia variedad de fuentes de datos, desde hojas de cálculo hasta sistemas ERP.</li>
+              <li data-i18n="p2_li2_3"><strong>Análisis predictivo:</strong> Con el soporte de inteligencia artificial, las empresas pueden prever tendencias y comportamientos futuros.</li>
+              <li data-i18n="p2_li2_4"><strong>Acceso en tiempo real:</strong> La información actualizada permite a los líderes empresariales tomar decisiones ágiles y precisas.</li>
+            </ul>
+          </section>
+
+          <section class="perspectiva-bloque">
+            <h3 data-i18n="p2_subtit3">Incremento de utilidades con el uso de Power BI</h3>
+            <p data-i18n="p2_p3">Empresas que han adoptado Power BI han reportado incrementos significativos en sus utilidades gracias a:</p>
+            <ul>
+              <li data-i18n="p2_li3_1"><strong>Mejoras en la productividad:</strong> La automatización de informes y análisis reduce el tiempo dedicado a tareas repetitivas.</li>
+              <li data-i18n="p2_li3_2"><strong>Detección de ineficiencias:</strong> Identificar áreas de mejora operativa contribuye a una asignación más efectiva de los recursos.</li>
+              <li data-i18n="p2_li3_3"><strong>Toma de decisiones informada:</strong> Con datos precisos, los riesgos se minimizan y las estrategias se ejecutan con mayor confianza.</li>
+            </ul>
+          </section>
+
+          <aside class="perspectiva-llamado">
+            <h3 data-i18n="p2_llamado_tit">Descubre el potencial de Power BI para tu empresa</h3>
+            <p data-i18n="p2_llamado_p1">En Inteligencia de Datos, somos expertos en implementar soluciones basadas en Power BI para transformar el manejo de datos en tu empresa. ¿Listo para llevar tus decisiones empresariales al siguiente nivel?</p>
+            <p data-i18n="p2_llamado_p2">Agenda una demo personalizada hoy mismo y descubre cómo Power BI puede ayudarte a optimizar procesos, tomar decisiones informadas y aumentar tus utilidades.</p>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

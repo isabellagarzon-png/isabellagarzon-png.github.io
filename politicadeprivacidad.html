@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad | Inteligencia de datos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html#inicio" class="logo-enlace">
+      <img src="assets/LOGOINTELIGENCIADEDATOSPOSITIVA.png" alt="Logo de la empresa" class="logo">
+    </a>
+
+    <nav>
+      <a href="index.html#inicio" data-i18n="nav_inicio">Inicio</a>
+      <a href="index.html#nosotros" data-i18n="nav_nosotros">Nosotros</a>
+      <a href="index.html#servicios" data-i18n="nav_servicios">Servicios</a>
+      <a href="index.html#experiencia" data-i18n="nav_experiencia">Experiencia</a>
+      <a href="index.html#perspectivas" data-i18n="nav_perspectivas">Perspectivas</a>
+      <a href="index.html#contactanos" data-i18n="nav_contactanos">Contáctanos</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- SELECTOR DESPLEGABLE DE IDIOMA -->
+      <div class="lang-dropdown">
+        <button class="lang-switch" id="lang-toggle-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Cambiar idioma" data-i18n-aria="aria_cambiar_idioma">
+          <svg class="lang-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="lang-actual">ES</span>
+          <svg class="lang-arrow" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M1 1.5L6 6.5L11 1.5"/>
+          </svg>
+        </button>
+        <ul class="lang-menu" role="listbox" aria-label="Seleccionar idioma">
+          <li>
+            <button type="button" class="lang-option activo" data-lang="es" role="option" aria-selected="true">
+              <span class="lang-flag">🇪🇸</span>
+              <span class="lang-name">Español</span>
+              <span class="lang-code">ES</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="lang-option" data-lang="en" role="option" aria-selected="false">
+              <span class="lang-flag">🇺🇸</span>
+              <span class="lang-name">English</span>
+              <span class="lang-code">EN</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="lang-option" data-lang="pt" role="option" aria-selected="false">
+              <span class="lang-flag">🇧🇷</span>
+              <span class="lang-name">Português</span>
+              <span class="lang-code">PT</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" data-i18n-aria="aria_abrir_menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="perspectiva">
+      <div class="perspectiva-detalles">
+        <article class="perspectiva-detalle perspectiva-articulo">
+          <header class="perspectiva-articulo-cabecera">
+            <h1 class="perspectiva-titulo-pildora" style="margin: 0 auto;">Política de privacidad</h1>
+          </header>
+
+          <div class="perspectiva-contenido">
+            <p>En <strong>INTELIGENCIA DE DATOS S.A.S.</strong>, respetamos tu privacidad y estamos comprometidos
+            con la protección de tus datos personales, conforme a la Ley 1581 de 2012 sobre Protección de Datos Personales
+            y el Decreto 1377 de 2013. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos,
+            compartimos y protegemos tu información personal.</p>
+            
+            <ol>
+              <li><strong>Responsable del Tratamiento de los Datos Personales:</strong> El responsable del tratamiento de 
+              tus datos personales es INTELIGENCIA DE DATOS S.A.S., con domicilio en TORRES DE ALEJANDRÍA TO 1 AP 801 VÍA 
+              CONDINA y con teléfono de contacto +57 320 782 5115. Si tienes alguna pregunta sobre el tratamiento de tus datos
+              personales, puedes comunicarte con nosotros a través de <a href="mailto:gerencia@inteligenciadedatos.com">gerencia@inteligenciadedatos.com</a>.</li>
+              <li><strong>Datos que Recopilamos:</strong> Recopilamos los siguientes tipos de datos personales:
+              <ul>
+                <li>Nombre de la empresa</li>
+                <li>NIT de la empresa (sin dígito de verificación)</li>
+                <li>¿Qué sistema ERP utiliza su empresa actualmente?</li>
+                <li>¿Cuáles módulos tiene contratados en su ERP?</li>
+                <li>¿Cuáles herramientas utiliza actualmente para el análisis de los datos financieros y comerciales?</li>
+                <li>¿Cuáles soluciones de transformación de datos del negocio requiere?</li>
+                <li>¿Es una prioridad estratégica invertir en los próximos 6 meses en una solución tecnológica probada y personalizada para mejorar la gestión de los beneficios económicos?</li>
+                <li>Nombre de la persona que diligencia la encuesta</li>
+                <li>Correo electrónico de la persona que diligencia la encuesta</li>
+                <li>Teléfono de la persona que diligencia la encuesta</li>
+                <li>Datos de interacción con el sitio web: Dirección IP, tipo de navegador, página de acceso, tiempo de navegación, entre otros datos de uso.</li>
+              </ul>
+              </li>
+              <li><strong>Finalidad del Tratamiento de Datos Personales:</strong> Los datos personales que recopilamos se utilizarán para las siguientes finalidades: 
+              <ul>
+                <li>Gestionar y procesar solicitudes, consultas y compras realizadas a través del sitio web.</li>
+                <li>Enviarte comunicaciones relacionadas con nuestros productos, servicios, promociones o novedades, si has otorgado tu consentimiento para ello.</li>
+                <li>Mejorar la experiencia de usuario y personalizar el contenido del sitio web.</li>
+                <li>Cumplir con las obligaciones legales o contractuales.</li>
+              </ul>
+              </li>
+              <li><strong>Derechos del Titular de los Datos:</strong> De acuerdo con la Ley 1581 de 2012 y la normativa vigente, como titular de tus datos personales, tienes los siguientes derechos:
+                <ul>
+                  <li>Acceso: Obtener confirmación sobre la existencia de datos personales sobre ti en nuestras bases de datos.</li>
+                  <li>Actualización y corrección: Solicitar la actualización, corrección o supresión de tus datos personales.</li>
+                  <li>Revocatoria del consentimiento: Puedes revocar el consentimiento otorgado para el tratamiento de tus datos en cualquier momento, sin que esto afecte la legalidad del tratamiento realizado antes de la revocatoria.</li>
+                  <li>Eliminación: Solicitar la eliminación de tus datos personales, cuando ya no sean necesarios para las finalidades para las cuales fueron recolectados.</li>
+                </ul>
+                <p>Si deseas ejercer alguno de estos derechos, puedes hacerlo enviando una solicitud a <a href="mailto:gerencia@inteligenciadedatos.com">gerencia@inteligenciadedatos.com</a> </p>
+              </li>
+              <li><strong>Cómo Protegemos tu Información:</strong> Implementamos medidas técnicas, administrativas y físicas para proteger tus datos personales contra acceso no autorizado, 
+              pérdida, alteración o divulgación no autorizada. Sin embargo, te recordamos que no podemos garantizar la seguridad absoluta de la información en internet.</li>
+              <li><strong>Compartir tu Información:</strong> No venderemos, alquilaremos ni compartiremos tus datos personales con terceros, excepto en los siguientes casos:
+               <ul>
+                <li>Para cumplir con obligaciones legales o regulatorias.</li>
+                <li>Para cumplir con los términos de los servicios que prestamos, tales como el procesamiento de pagos a través de plataformas externas.</li>
+               </ul>
+              </li>
+              <li><strong>Cookies:</strong> Nuestro sitio web utiliza cookies para mejorar tu experiencia de navegación. Las cookies nos permiten analizar el uso del sitio y personalizar 
+              la información que te mostramos. Puedes configurar tu navegador para bloquear las cookies, aunque algunas funcionalidades del sitio podrían no estar disponibles.</li>
+              <li><strong>Transferencia Internacional de Datos:</strong> En caso de que tus datos sean transferidos a otro país, te aseguramos que se cumplirán los estándares de protección de datos adecuados de acuerdo con las leyes colombianas.</li>
+              <li><strong>Modificaciones a la Política de Privacidad:</strong> Podemos actualizar esta política de privacidad periódicamente. Cualquier cambio será informado mediante la publicación de una versión actualizada en esta página. Te recomendamos revisar regularmente esta política.</li>
+              <li><strong>Contacto:</strong> Si tienes dudas sobre el tratamiento de tus datos personales, deseas hacer alguna solicitud o ejercer alguno de tus derechos, por favor contáctanos a: <a href="mailto:gerencia@inteligenciadedatos.com">gerencia@inteligenciadedatos.com</a> </li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
