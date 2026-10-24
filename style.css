@@ -9,19 +9,20 @@
     --fuente-texto: Helvetica, Arial, sans-serif;  /*ESTABLECE LA FUENTE PARA LA DEMÁS INFORMACION*/
 }
 
-/*REINICIO GLOBAL: EL PADDING Y EL BORDE YA NO SUMAN AL ANCHO DE LOS ELEMENTOS (EVITA QUE LAS TARJETAS SE DESBORDEN EN CELULAR)*/
+/*CAMBIAN LA FORMA EN QUE EL NAVEGADOR CALCULA EL TAMAÑO DE LOS ELEMENTOS. EL PADDING Y EL BORDE YA NO SUMAN AL ANCHO DE LOS ELEMENTOS (EVITA QUE LAS TARJETAS SE DESBORDEN EN CELULAR*/
+/*EL * SIGNIFICA TODO LOS ELEMENTOS DE LA PAGINA,*/
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 img {
-    max-width: 100%;   /*LAS IMAGENES NUNCA SE SALEN DE SU CONTENEDOR*/
+    max-width: 100%;   /*LAS IMAGENES NUNCA SE SALEN DE SU CONTENEDOR, ABARCAN SU 100% DEL ANCHO*/
 }
 
 body { 
     font-family: var(--fuente-texto);  /*ESTABLECE UNA TIPOGRAFIA ESPECIFICA PARA TODO TEXTO DESCRIPTIVO*/
-    overflow-x: hidden;
-    width: 100%;
+    overflow-x: hidden; /*EVITA LA BARRA DE DESPLAZAMIENTO HORIZONTAL*/
+    width: 100%;  /*ESTABLECE EL ANCHO DE LA PAGINA AL 100% DEL CONTENEDOR*/
     margin: 0;   /*QUITA EL MARGEN DE 8PX QUE TRAE EL NAVEGADOR POR DEFECTO*/
 }
 
@@ -29,14 +30,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);  /*ESTABLECE UNA TIPOGRAFIA ESPECIFICA PARA TODOS DIFERENTES ENCABEZADOS*/
 }
 
-/* Interacción y controles de formulario: garantizamos que hereden las fuentes de :root */
+/* ESTABLECE QUE TODOS ESTOS ELEMENTOS TENGAN LA FUENTE ESTABLECIDA EN ROOT */
 button, input, select, textarea, optgroup {
     font-family: var(--fuente-texto);
 }
 
 .logo { 
     height: 45px;
-    width: auto;
+    width: auto; /*ANCHO AUTOMATICO PARA QUE NO SE DEFORME EL LOGO*/
     display: block;  /*INDICA QUE EL LOGO SE MUESTRA COMO UN ELEMENTO DE BLOQUE*/
 }
 
@@ -96,9 +97,9 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .lang-switch {   /*BOTON DE IDIOMA*/
-    display: inline-flex;
+    display: inline-flex;  /*HACE QUE EL BOTON SE MUESTRE EN FILA*/
     align-items: center;
-    gap: 7px;
+    gap: 7px;  /*ESPACIO ENTRE EL ICONO Y EL TEXTO DEL BOTON*/
     border-radius: 999px;
     background-color: transparent;
     color: var(--blanco);
@@ -108,8 +109,8 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     font-weight: 600;
     padding: 7px 14px; 
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; /*TRANSICION SUAVE AL CAMBIAR DE COLOR*/
+    white-space: nowrap;  /*EVITA QUE EL TEXTO SE DIVIDA EN VARIAS LINEAS*/
 }
 
 .lang-switch:hover,
@@ -122,24 +123,24 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 .lang-icon {  /*ESTILO DEL ICONO DEL IDIOMA*/
     width: 16px;
     height: 16px;
-    flex-shrink: 0;
+    flex-shrink: 0;  /*EVITA QUE EL ICONO SE ENCOJA CUANDO EL BOTON SE REDUZCA*/
 }
 
 .lang-arrow {  /*FLECHITA DESPLEGABLE*/
     width: 10px;
     height: 10px;
     margin-left: 1px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease;  /*TRANSICION SUAVE AL GIRAR LA FLECHA*/
 }
 
 .lang-dropdown.abierto .lang-arrow {
-    transform: rotate(180deg);
+    transform: rotate(180deg);  /*ROTA LA FLECHA 180 GRADOS*/
 }
 
-/* Menú desplegable flotante de selección de idioma */
+/* MENU DESPLEGABLE FLOTANTE DE IDIOMA */
 .lang-menu {
-    position: absolute;
-    top: calc(100% + 8px);
+    position: absolute;  /*HACE QUE EL MENU "SALTE" Y SE SALGA DE SU POSICION*/
+    top: calc(100% + 8px); 
     right: 0;
     background-color: var(--azul-marino);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -602,6 +603,18 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     font-family: var(--fuente-titulos);
     color: var(--azul-marino);
     font-size: 2.5rem;
+}
+
+#perspectivas h2 {
+    margin: 0 0 16px 0;
+}
+
+#perspectivas > p {
+    font-family: var(--fuente-texto);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--negro);
+    margin: 0 0 36px 0;
 }
 
 .perspectivas-grid {
@@ -1699,6 +1712,18 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
         font-size: 2.2rem;
     }
 
+    #perspectivas {
+        padding: 60px 30px;
+    }
+
+    #perspectivas h2 {
+        font-size: 2.2rem;
+    }
+
+    #perspectivas > p {
+        font-size: 1.1rem;
+    }
+
     #servicios {
         padding-top: 90px;
     }
@@ -1923,6 +1948,22 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
         margin-left: auto;
         margin-right: auto;
         text-align: left;
+    }
+
+    /* ── Perspectivas Móvil ── */
+    #perspectivas {
+        padding: 40px 20px;
+    }
+
+    #perspectivas h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    #perspectivas > p {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 24px;
     }
 
     /* ── Servicios Móvil ── */
