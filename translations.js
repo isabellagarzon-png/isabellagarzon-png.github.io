@@ -28,7 +28,7 @@ const translations = {
 
     // Sección Nosotros
     nosotros_titulo: "¿Quiénes somos?",
-    nosotros_subtitulo: "Nos encargamos de recopilar, procesar y analizar tu información para impulsar las mejores decisiones de tu negocio. <br>Sé parte de nuestra comunidad y entra en el mundo de la Inteligencia de datos",
+    nosotros_subtitulo: "Nos encargamos de recopilar, procesar y analizar tu información para impulsar las mejores decisiones de tu negocio. Sé parte de nuestra comunidad y entra en el mundo de la Inteligencia de datos",
     pilar_mision_tit: "Misión",
     pilar_mision_desc: "Transformamos grandes volúmenes de datos en información valiosa, comprensible y accionable para que organizaciones tomen decisiones más acertadas y estratégicas.",
     pilar_vision_tit: "Visión",
@@ -216,7 +216,7 @@ const translations = {
 
     // About Section
     nosotros_titulo: "Who are we?",
-    nosotros_subtitulo: "We collect, process, and analyze your information to empower the best decisions for your business. <br>Join our community and step into the world of Data Intelligence",
+    nosotros_subtitulo: "We collect, process, and analyze your information to empower the best decisions for your business. Join our community and step into the world of Data Intelligence",
     pilar_mision_tit: "Mission",
     pilar_mision_desc: "We transform large volumes of data into valuable, understandable, and actionable information so organizations make smarter and more strategic decisions.",
     pilar_vision_tit: "Vision",
@@ -404,7 +404,7 @@ const translations = {
 
     // Seção Sobre Nós
     nosotros_titulo: "Quem somos?",
-    nosotros_subtitulo: "Coletamos, processamos e analisamos suas informações para impulsionar as melhores decisões do seu negócio. <br>Faça parte da nossa comunidade e entre no mundo da Inteligência de Dados",
+    nosotros_subtitulo: "Coletamos, processamos e analisamos suas informações para impulsionar as melhores decisões do seu negócio. Faça parte da nossa comunidade e entre no mundo da Inteligência de Dados",
     pilar_mision_tit: "Missão",
     pilar_mision_desc: "Transformamos grandes volumes de dados em informações valiosas, compreensíveis e acionáveis para que organizações tomem decisões mais acertadas e estratégicas.",
     pilar_vision_tit: "Visão",

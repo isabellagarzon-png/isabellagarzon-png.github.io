@@ -36,7 +36,7 @@ button, input, select, textarea, optgroup {
 }
 
 .logo { 
-    height: 45px;
+    height: 45px; /*LARGO*/
     width: auto; /*ANCHO AUTOMATICO PARA QUE NO SE DEFORME EL LOGO*/
     display: block;  /*INDICA QUE EL LOGO SE MUESTRA COMO UN ELEMENTO DE BLOQUE*/
 }
@@ -90,23 +90,22 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     gap: 16px;   /*ESPACIO ENTRE EL BOTON DE IDIOMA Y EL MENU HAMBURGUESA*/
 }
 
-/* ── SELECTOR DE IDIOMAS Y DROPDOWN ── */
-.lang-dropdown {
-    position: relative;
-    display: inline-block;
+.lang-dropdown { /* SELECTOR DE IDIOMAS Y DROPDOWN */
+    position: relative;  /* HACE QUE SE QUE EN SU SITIO*/
+    display: inline-block;  
 }
 
-.lang-switch {   /*BOTON DE IDIOMA*/
+.lang-switch {   /*BOTON DE IDIOMA */
     display: inline-flex;  /*HACE QUE EL BOTON SE MUESTRE EN FILA*/
     align-items: center;
     gap: 7px;  /*ESPACIO ENTRE EL ICONO Y EL TEXTO DEL BOTON*/
     border-radius: 999px;
-    background-color: transparent;
+    background-color: transparent; 
     color: var(--blanco);
     border: 1.5px solid var(--blanco);
-    font-family: var(--fuente-texto);
+    font-family: var(--fuente-texto); 
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 600;  /*GROSOR DE LA LETRA, SEMINEGRITA*/
     padding: 7px 14px; 
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; /*TRANSICION SUAVE AL CAMBIAR DE COLOR*/
@@ -137,38 +136,37 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     transform: rotate(180deg);  /*ROTA LA FLECHA 180 GRADOS*/
 }
 
-/* MENU DESPLEGABLE FLOTANTE DE IDIOMA */
-.lang-menu {
+.lang-menu { /* MENU DESPLEGABLE FLOTANTE DE IDIOMA */
     position: absolute;  /*HACE QUE EL MENU "SALTE" Y SE SALGA DE SU POSICION*/
-    top: calc(100% + 8px); 
-    right: 0;
+    top: calc(100% + 8px); /*HACE QUE EL MENU DESPEGLABLE ESTE 8XP JUSTO ABAJO DEL BOTON DE IDIOMA*/
+    right: 0; /*HACE QUE SE "PEGUE A LA PARTE DERECHA, EL MENU SE EXTIENDE HACIA LA IZQUIERDA*/
     background-color: var(--azul-marino);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15); /*HACE QUE EL MENU DESPLEGABLE TENGA UN CONTORNO TRANSPARENTE DE COLOR BLANCO*/
     border-radius: 12px;
     padding: 6px;
-    min-width: 145px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    list-style: none;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-    z-index: 1000;
+    min-width: 145px;  /*HACE QUE EL MENU TENGA UN MINIMO ANCHO DE 145 PIXELES PARA QUE LA CAJA EVITE SER ANGOSTA*/
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);   /*HACE LO CONTRARIO A LA ANTEIOR, PONE UNA SOMBRA NEGRA PERO CON 25% DE TRANSPARENCIA*/
+    list-style: none; /*QUITA LOS PUNTOS TIPO VIÑETAS QUE EL NAVEGADOR PONE EN LAS LISTAS, COMO TENEMOS UL, SE VERIAN CON PUNTO, PERO ESTO LO QUITA*/
+    margin: 0; /*QUITA LA MARGEN ALREDEDOR DEL ELEMENTO QUE EL NAVEGADOR PONE POR DEFECTO*/
+    opacity: 0; /*LO HACE TOTALMENTE TRANSPARENTE*/ 
+    visibility: hidden;  /*LO OCULTA Y LO HACE NO CLICKEABLE*/
+    transform: translateY(-8px);  /*LO MUEVE 8PX HACIA ARRIBA*/
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; /*HACE QUE HAYA UNA TRANSICION SUAVE A LA HORA DE ABRIR EL MENU Y CERRARLO*/
+    z-index: 1000; /*HACE QUE EL MENU QUEDE POR ENCIMA DE LOS DEMAS ELEMENTOS DE LA PAGINA*/
 }
 
 .lang-dropdown.abierto .lang-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1;  /*JAVASCRIPT TOMA ESTA INSTRUCCION Y LA CONTRASTA CON LA ANTERIOR, CUANDO EL MENU SE ABRE YA NO ES TRANSPARENTE SINO QUE AHORA ES VISIBLE*/
+    visibility: visible;  /*LO MUESTRA Y DEJA QUE ESTE OCULTO CUANDO SE ABRE A COMPARACION DEL HIDDEN*/
+    transform: translateY(0);  /*HACE QUE EL MENU BAJE A SU LUGAR MIENTRAS APARECE*/
 }
 
 .lang-option {
-    display: flex;
+    display: flex; /*ELEMENTOS ENFILADOS - BANDERA Y NOMBRE*/
     align-items: center;
-    gap: 8px;
-    width: 100%;
-    padding: 8px 12px;
+    gap: 8px;  /*ESPACIO ENTRE ELEMENTOS SIN PONER MARGEN*/
+    width: 100%;  /*OCUPA TODO EL ANCHO DEL CONTENEDOR*/
+    padding: 8px 12px; /*AGREGA 8PX ARRIBA Y ABAJO, 12 EN LOS COSTADOS, ASI EL CONTENIDO NO QUEDA PEGADO A LOS BORDES*/
     background: transparent;
     border: none;
     border-radius: 8px;
@@ -178,87 +176,86 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     font-weight: 500;
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.15s ease, color 0.15s ease;
+    transition: background-color 0.15s ease, color 0.15s ease;  /*HACE QUE AL PASAR EL MOUSE HAYA UNA TRANSICIONN SUAVE PARA QUE SE MUESTRE UNA FONDO CON UNA TRANSPARENCIA*/
 }
 
 .lang-option:hover {
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.12);  /*ACOMPAÑADO DE LA ULTIMA LINEA DE LA CLASE ANTERIOR*/
 }
 
-.lang-option.activo {
+.lang-option.activo {  /*HACE QUE MIENTRAS EL MENU ESTE DESPLEGADO, EL BOTON SE MUESTRE NARANJA*/
     background-color: var(--naranja);
     color: var(--blanco);
     font-weight: 600;
 }
 
 .lang-flag {
-    font-size: 1.1rem;
-    line-height: 1;
+    font-size: 1.1rem;  /*SI EL TAMAÑO DETERMINADO ES 16PX, 1REM SON ESOS 16, 1.1 ES 16 MAS 10% DE ESOS 16*/
+    line-height: 1;  /*ALTURA DE CADA LINEA CON RESPECTO AL FONT-SIZE, ES SU MULTIPLO, SI POR EJEMPLO FUERA 2 SERIA 32, HACE QUE UN IDIOMA DEL OTRO QUEDEN PEGADOS*/
 }
 
-.lang-code {
-    margin-left: auto;
+.lang-code {  /*ESTILO PARA EL CODIGO DE CADA IDIOMA, ES, EN PT*/
+    margin-left: auto;  /*JUNTO CON DISPLAY FLEX, EL TEXTO SE VA A LA DERECHA Y EL CODIGO DEL IDIOMA SE VA A LA DERECHA*/
     font-size: 0.75rem;
-    opacity: 0.8;
-    text-transform: uppercase;
+    opacity: 0.8;  /*LO VUELVE UN POCO TRANSPARENTE*/
+    text-transform: uppercase;  /*MUESTRA EL TEXTO EN MAYUSCULAS SIN IMPORTAR SI EN HTML LO PUSE EN MINUSCULAS*/
 }
 
 .menu-toggle {    /*MENU HAMBURGUESA*/
-    display: none;   /*OCULTA EL MENU EN PANTALLAS GRANDES*/
-    flex-direction: column;
+    display: none;   /*OCULTA EL MENU EN PANTALLAS GRANDES, MAS ADELANTE HACE QUE SE VEA SOLO EN PANTALLAS ANGOSTAS CON EL @MEDIA...*/
+    flex-direction: column; /*CAMBIA EL EJE DEL FLEX Y HACE QUE EN LUGAR DE QUE VAYAN EN FILA VAYAN UNO DEBAJO DEL OTRO*/
     justify-content: center;
-    gap: 5px;
+    gap: 5px;  /*SEPARACION ENTRE RAYITAS*/
     width: 28px;
     height: 20px;
     background: none;
-    border: none;  
+    border: none;  /*NO TIENE BORDE*/
     cursor: pointer;
-    padding: 0;
+    padding: 0; /*HACE QUE NO HAYA ESPACIO INTERNO ENTRE EL ELEMENTO Y LOS BORDES, COMO NO TIENE BORDE NO SE NOTA*/
 }
 
 .menu-toggle span {   /*ESTILO DE CADA LINEA DEL MENU HAMBURGUESA*/
-    width: 100%;
+    width: 100%; /*HACE QUE OCUPE TODO EL ESPACIO DEL ELEMENTO EN ANCHO*/
     height: 3px;
-    background-color: var(--blanco);   /*ANTES ERA AZUL OSCURO SOBRE FONDO AZUL: NO SE VEIA*/
+    background-color: var(--blanco);   
     border-radius:2px;
 }
 
 .hero { /*HERO CON IMAGEN SVG DE FONDO COMPLETO*/
-    position: relative;
-    overflow: hidden;
-    min-height: 560px;
-    height: auto;
-    margin-top: 24px;   /*SE VE UN POCO MÁS ABAJO RESPECTO AL HEADER*/
-    margin-bottom: 45px;
-    display: flex;
-    align-items: center;
-    background-color: #071425;
-    padding: 75px 6% 70px;
+    position: relative;  /*DEJA AL ELEMENTO EN SU LUGAR NORMAL, A COMPARACION DE ABSOLUTE QUE LO SACA*/
+    overflow: hidden; /*HACE QUE ELEMENTOS APARTE DEL HERO SE OCULTEN SI SALEN DE LOS LIMITES DEL HERO*/
+    min-height: 560px; /*EL MINIMO DE ANCHO ES ESE, PERO....*/ 
+    height: auto;  /*PUEDE CRECER SI EL CONTENIDO NECESITA MAS ESPACIO*/
+    margin-top: 24px;   /*SE VE UN POCO MÁS ABAJO Y NO PEGADO AL HEADER*/
+    margin-bottom: 45px; /*NO QUEDA PEGADO A LA SIGUIENTE SECCION*/
+    display: flex;  /*CONVIERTE AL HERO EN UN CONTENEDOR FLEXIBLE, FUNCIONA CON LA SIGUIENTE LINEA, LOS HIJOS PASAN A SER ELEMENTOS FLEX, SE ACOMODAN EN FILA*/
+    align-items: center;  /*CENTRA ESOS HIJOS VERTICALMENTE DENTRO DEL HERO, COMO TIENE MIN HEIGHT EL CONTENIDO QUEDA CENTRADO CON RESPECTO A ESA ALTURA*/
+    background-color: #071425; /*UN AZUL EXTREMANDAMENTE OSCURO QUE APARECE MIENTRAS CARGA LA IMAGEN DEL HERO*/
+    padding: 75px 6% 70px; /*75px DE ESPACIO INTERNO ARRIBA, 6% DEL ANCHO RELATIVO DEL HERO EN LOS LADOS Y 70PX ABAJO, ESE PORCENTAJE DEPENDE DE LA PANTALLA*/
 }
 
-/* Capa sutil de oscurecimiento que garantiza lectura perfecta del texto blanco */
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.65) 48%, rgba(6, 18, 35, 0.20) 100%);
-    z-index: 1;
-    pointer-events: none;
+.hero::after { /*CAPA DE OSCURECIMIENTO DEL HERO PARA QUE SE LEA BIEN EL TEXTO BLANCO, AFTER HACE QUE SE PUEDA PONER DEL HERO EN ESTE CASO SIN PONERLO EN HTML*/
+    content: '';  /*OBLIGATORIO PARA QUE AFTER EXISTA, SIN ESTO NO SE GENERA, ASI NO TENGA NADA DENTRO DE LAS COMILLAS*/
+    position: absolute; /*HACE QUE LA CAPA SE PUEDA PONER POR ENCIMA DEL HERO SIN EMPUJAR EL CONTENIDO*/
+    inset: 0;  /*ATAJO DE TOP, RIGHT, BOTTOM, LEFT PARA QUE LA CAPA CUBRA TODO EL HERO DE EXTREMO A EXTREMO*/
+    background: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.65) 48%, rgba(6, 18, 35, 0.20) 100%);  /*REGLAS DE TRANSPARENCIA QUE HACE QUE LA CAPA SEA MAS OSCURA EN LA PARTE DEL TEXTO Y MAS TRANSPARENTE EN LA PARTE DE LA CABEZA DE LA FOTO*/
+    z-index: 1;  /*CAPA DE APILAMIENTO, LA CAPA QUEDA POR ENCIMA DE LA IMAGEN DEL HERO*/
+    pointer-events: none; /*HACE QUE LA CAPA SEA TRANSPARENTE A LOS CLICKS Y AL MOUSE, SIN ESTO LA CAPA TAPARIA LOS BOTONES Y LOS ENLACES DEL HERO NO PODRIAN PRESIONARSE*/
 }
 
 .hero-forma {   /*FONDO SVG CENTRADO VERTICALMENTE QUE ABARCA TODO EL HERO DETRÁS*/
-    position: absolute;
-    inset: 0;
-    width: 100%;
+    position: absolute; /*SE POSICIONA RESPECTO AL HERO, PARA PONERLA DETRAS DEL CONTENIDO SIN EMPUJARLO*/
+    inset: 0; /*ATAJO ANTERIOR, PEGA LA IMAGEN A TODOS LOS BORDES*/
+    width: 100%; /*ESTA CON LA SIGUIENTE HACE QUE LA IMAGEN CUBRA TODO EL ESPACIO DEL HERO*/
     height: 100%;
-    object-fit: cover;
-    object-position: center center;  /*FONDO CENTRADO VERTICALMENTE*/
-    z-index: 0;
-    pointer-events: none;
+    object-fit: cover; /*LA IMAGEN SE ESCALA Y MANTIENE SU PROPORCION HASTA LLENAR LA CAJA, SI SOBRA ESPACIO EN LOS BORDES SE DEFORMA, ASI NO QUEDAN HUECOS NI SE DEFORMAN*/
+    object-position: center center;  /*CENTRADO HORIZONTAL Y VERTICALMENTE, DEFINE QUE PARTE QUEDA VISIBLE CUANDO SE RECORTA*/
+    z-index: 0; /*CAPA MAS BAJA, QUEDA AL FONDO*/
+    pointer-events: none; /*HACE QUE EL HERO NO SEA CICKLEABLE NI NADA PARA QUE EVITE ESTORBAR LA INTERACTIVIDAD DEL BOTON*/
 }
 
 .hero-texto {  /*TEXTO DEL HERO POR ENCIMA DE LA FOTO*/
-    position: relative;
+    position: relative; /*MANTIENE EL BLOQUE EN SU LUGAR NORMAL PERO LE PERMITE USAR Z INDEX*/
     z-index: 2;  /*QUEDA POR ENCIMA DE LA IMAGEN DE FONDO Y DEL OVERLAY*/
     max-width: 650px;
     color: var(--blanco);
@@ -292,12 +289,12 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 
 .hero .btn-primario:hover {
     background-color: #e64539;
-    transform: translateY(-2px);
+    transform: translateY(-2px);  /*HACE AL PASAR POR ENCIMA, EL BOTON SUBA UN POCO*/
     box-shadow: 0 6px 20px rgba(255, 80, 67, 0.45);
 }
 
-.btn-primario {
-    display: inline-block;
+.btn-primario { /*BOTON DE MAS DETALLES QUE APARECE MAS ABAJO*/
+    display: inline-block; /*BOTON CON TAMAÑO PROPIO, SE AJUSTA AL CONTENIDO Y PERMITE PADDING, PUEDE ESTAR AL LADO DE OTROS BOTONES*/
     border-radius: 999px;
     background-color: #085294;
     color: #ffffff;
@@ -315,191 +312,9 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     background-color:var(--naranja);
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   HERO PORTAL — VERSIÓN LIGERA / BLANCA (Inspirada en CryptOwl)
-   Fondo Blanco, Arco Naranja (#FF5043), Gráfico Estadístico en Mostaza Tenue
-   ══════════════════════════════════════════════════════════════════════════ */
-.hero-portal {
-    position: relative;
-    overflow: hidden;
-    min-height: 640px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--blanco);
-    padding: 70px 4% 50px;
-    text-align: center;
-}
-
-/* Capa 1: Gráficos de barras estadísticas e indicadores (Mostaza suave) */
-.hero-portal__charts {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.85;
-}
-
-.hero-portal__chart-svg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-portal__trend-line {
-    animation: dash-anim 20s linear infinite;
-}
-
-@keyframes dash-anim {
-    from { stroke-dashoffset: 200; }
-    to { stroke-dashoffset: 0; }
-}
-
-/* Capa 2: Arco / Puerta 3D Central Naranja (#FF5043) */
-.hero-portal__gate {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -46%);
-    width: clamp(480px, 58vw, 720px);
-    height: auto;
-    z-index: 2;
-    pointer-events: none;
-    transition: transform 0.4s ease;
-}
-
-.hero-portal:hover .hero-portal__gate {
-    transform: translate(-50%, -47%) scale(1.015);
-}
-
-.hero-portal__gate-svg {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 14px 28px rgba(255, 80, 67, 0.16));
-}
-
-/* Capa 3: Contenido textual (Completamente enmarcado dentro del arco naranja) */
-.hero-portal__content {
-    position: relative;
-    z-index: 3;
-    max-width: 440px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: 55px; /* Centrado dentro de la bóveda del arco */
-    padding: 0 10px;
-}
-
-.hero-portal__headline {
-    font-family: var(--fuente-titulos);
-    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-    font-weight: 600;
-    line-height: 1.18;
-    color: var(--azul-marino);
-    margin: 0;
-    text-align: center;
-}
-
-.hero-portal__headline-line {
-    display: block;
-}
-
-.hero-portal__headline-word {
-    display: block;
-    color: var(--azul-marino);
-}
-
-.hero-portal__subhead {
-    font-family: var(--fuente-titulos);
-    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-    font-weight: 400;
-    color: var(--negro); /* Negro para el subtítulo */
-    margin: 2px 0 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    white-space: nowrap;
-}
-
-.hero-portal__subhead-dot {
-    color: var(--naranja);
-    font-weight: bold;
-}
-
-/* Botón CTA Naranja (#FF5043) */
-.hero-portal__cta-wrap {
-    margin-top: 4px;
-}
-
-.hero-portal__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--naranja);
-    color: var(--blanco);
-    font-family: var(--fuente-titulos);
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 12px 30px;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 8px 22px rgba(255, 80, 67, 0.35);
-    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hero-portal__cta:hover {
-    background-color: #ff3c2d;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(255, 80, 67, 0.45);
-}
-
-.hero-portal__cta-arrow {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.25s ease;
-}
-
-.hero-portal__cta:hover .hero-portal__cta-arrow {
-    transform: translateX(4px);
-}
-
-/* Responsividad para .hero-portal */
-@media (max-width: 768px) {
-    .hero-portal {
-        min-height: 520px;
-        padding: 50px 20px 40px;
-    }
-    .hero-portal__gate {
-        width: 95vw;
-        opacity: 0.7;
-        transform: translate(-50%, -46%);
-    }
-    .hero-portal__content {
-        max-width: 320px;
-        margin-top: 35px;
-        gap: 10px;
-    }
-    .hero-portal__headline {
-        font-size: 1.55rem;
-    }
-    .hero-portal__subhead {
-        font-size: 0.88rem;
-        flex-wrap: wrap;
-        white-space: normal;
-        gap: 4px;
-    }
-    .hero-portal__cta {
-        padding: 10px 24px;
-        font-size: 0.92rem;
-    }
-}
-
 /*COMENZAMOS CON LA PARTE DE NOSOTROS */
-#nosotros {
-    padding: 50px 5% 40px;
+#nosotros { /*DEFINE COMO SE VE ENTRE EL BORDE DE LA SECCION Y SU CONTENIDO*/ /*# SIGNIFICA QUE ES UNA ID, NORMALMENTE UN ENLACE*/
+    padding: 50px 5% 40px; /*50 DE ESPACIO ENTRE EL BORDE SUPERIOR DE LA SECCION Y DEL CONTENIDO, LO MISMO CON LS OTROS DOS VALORES*/
 }
 
 #nosotros h2 {
@@ -507,7 +322,7 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     font-size: 2.5rem;
     text-align:initial;
     color: #042C53;
-    margin-left: 0;
+    margin-left: 0; /*A PESAR DE NO TENER UN MARGEN, TENEMOS UN PADDING*/
     margin-bottom: 16px;
 }
 
@@ -516,44 +331,39 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     margin-left: 0;
     font-size: 1.2rem;
     line-height: 1.6;
-    max-width: 900px;
+    max-width: 900px; /*LIMITE DE ANCHO DE HASTA DONDE SE PUEDE VER EL TEXTO, EVITA UNA LINEA UNICA DE TEXTO DE EXTREMO A EXTREMO*/
+    text-wrap: pretty; /*LE DICE AL NAVEGADOR QUE ACOMODE MEJOR LOS SALTOS DE LINEA, POR EJEMPLO EVITA QUE LA ULTIMA PALABRA QUEDE EN UNA SOLA LINEA*/
 }
 
 .pilares {     
-    display:flex;
-    gap: 32px;
-    margin: 48px 0;
-}
-
-#nosotros h1 {
-    font-family: var(--fuente-texto);
-    font-size: 1.1rem;
-    margin: 40px;
+    display:flex; /*ENFILADAS*/
+    gap: 32px; /*SEPARADA CADA UNA DE ESE VALOR*/
+    margin: 48px 0;  /*MARGEN ARRIBA Y ABAJO, NO EN LOS LADOS*/
 }
 
 .pilares article { 
     font-family: var(--fuente-texto);
-    flex: 1;      /*SE REPARTE EL ANCHO EN PARTES IGUALES*/
+    flex: 1;      /*HACE QUE TODAS LAS TARJETAS TENGAN EL MISMO ANCHO*/
     background-color: #ffffff;
     border-radius: 20px;
     padding: 32px 28px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     border: none;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease; /*CON EL SIGUIENTE BLOQUE HACE QUE LAS TARJETAS TENGAN UN CAMBIO AL PASAR EL MOUSE, LA SOMBRA CAMBIA DE FORMA GRADUAL*/
 }
 
 .pilares article:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);  /*HACE QUE AL PASAR EL MOUSE, LAS TARJETAS SUBAN UN POCO*/
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12); /*TRANSICION DE LA SOMBRA UN POCO MAS TRANSPARENTE*/
 }
 
 .pilar-icono { 
     width: 56px;
     height: 56px;
-    border-radius: 50%;
+    border-radius: 50%; /*HACE QUE SE HAGA UN CIRCULO DEL TAMAÑO ANTERIORMENTE DEFINIDO*/
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /*CENTRA EL ICONO EN EL EJE HORIZONTAL DENTRO DEL CIRCULO*/
+    justify-content: center; /*CENTRA EL ICONO EN EL EJE VERTICAL, SE USAN LOS DOS PARA QUE EL ELEMENTO QUEDE CENTRADO EN AMBOS SENTIDOS*/
     margin-bottom: 16px;
     color: var(--blanco);
 }
@@ -561,7 +371,7 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 .pilar-svg {
     width: 26px;
     height: 26px;
-    stroke: var(--blanco);
+    stroke: var(--blanco); /*COLOR DEL TRAZO*/
 }
 
 .pilar-icono-mision { background-color: var(--azul-marino); }
@@ -571,7 +381,7 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 /* SECCION QUE HACEMOS */
 #que-hacemos {
     background-color: var(--gris-claro);
-    padding: 60px 40px;
+    padding: 60px 40px; /*ESPACIO INTERNO QUE HAY*/
 }
 
 #que-hacemos h2 {
@@ -584,29 +394,29 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 #que-hacemos p {
     font-family: var(--fuente-texto);
     font-size: 1.15rem;
-    line-height: 1.6;
+    line-height: 1.6; /*SEPARACION ENTRE LINEAS*/
     color: var(--negro);
-    margin-bottom: 20px;
+    margin-bottom: 20px; /*HACE QUE CADA PARRAFO TENGA UNA MARGEN ABAJO DE ESE VALOR*/
     max-width: 900px;
 }
 
 #que-hacemos p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0;  /*HACE QUE EL ULTIMO PARRAFO DEJE DE TENER EL MARGEN QUE DEFINIMOS EN EL BLOQUE ANTERIOR*/
 }
 
 #perspectivas {
-    padding: 60px 40px;
+    padding: 60px 40px; /*MISMO ESPACIO INTERNO QUE LA SECCION ANTERIOR*/
 }
 
 #perspectivas h2,
-#perspectiva h1 {
+#perspectiva h1 { /*FORMA ABREVIADA DE PONER LOS MISMOS ESSTILOS PARA AMBAS*/
     font-family: var(--fuente-titulos);
     color: var(--azul-marino);
     font-size: 2.5rem;
 }
 
 #perspectivas h2 {
-    margin: 0 0 16px 0;
+    margin: 0 0 16px 0; /* QUITA LAS MARGENES, ARRIBA, A LA DERECHA E IZQUIERDA QUE POR DEFECTO EL NAVEGADOR PONE, EL 16PX VA ABAJO DEL TITULO QUE LO SEPARA DEL TEXTO*/
 }
 
 #perspectivas > p {
@@ -619,14 +429,14 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 
 .perspectivas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /*CADA COLUMNA MIDE MAXIMO ESE VALOR Y ESA COLUMBA SE REPITE TANTAS VECES COMO QUEPAN EN EL ANCHO*/
     gap: 24px;
 }
 
 .perspectiva-tarjeta {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /*APILA A LAS TARJETAS UNA DEBAJO DE LA OTRA VERTICALMENTE*/
+    align-items: flex-start; /*CADA TARJETA MIDE SOLO LO QUE NECESITA SU CONTENIDO Y TODAS QUEDAN ALINEADAS POR ARRIBA*/ 
     gap: 18px;
     padding: 28px;
     border-radius: 20px;
@@ -641,7 +451,7 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .btn-quiero-saber-mas {
-    display: inline-block;
+    display: inline-block; /*SE QUEDA AL LADO DE OTROS ELEMENTOS COMO INLINE SIN OCUPAR TODA LA FILA TENIENDO ELEMENTOS DE BLOCK QUE PUEDEN TENER PADDING*/
     padding: 10px 22px;
     border: 0;
     border-radius: 999px;
@@ -658,25 +468,25 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 #perspectiva {
-    padding: 60px clamp(20px, 6vw, 80px);
+    padding: 60px clamp(20px, 6vw, 80px); /*ESTABLECE UN ESPACIO INTERNO, MINIMO DE 20PX, IDEAL DEL 6% DEL ANCHO DE LA PANTALLA Y MAXIMO 80PX*/
 }
 
-#perspectiva > h1 {
-    max-width: 1000px;
-    margin: 0 auto 36px;
-    text-align: center;
+#perspectiva > h1 { /*SELECCIONA LOS H1 QUE ESTEN DENTRO DE PERSPECTIVA*/
+    max-width: 1000px; /*EL TITULO NO SERÁ MAS ANCHO QUE 1000PC, EN PANTALLAS PEQUELLAS SE ENCOGE PARA CABER*/
+    margin: 0 auto 36px; /*NADA ARRIBA, AUTOMATICA EN LOS LADOS (LA MISMA EN LA IZQUIERDA Y DERECHA) Y 36 ABAJO QUE SEPARA EL TITULO DEL CONTENIDO*/
+    text-align: center; /*CENTRA EL TEXTO*/
 }
 
 .perspectiva-detalles {
-    display: grid;
+    display: grid; /*ACOMODA LOS HIJOS EN UNA CUADRICULA*/
     gap: 32px;
 }
 
-.perspectiva-detalle {
-    width: 100%;
-    max-width: 1000px;
+.perspectiva-detalle {  /*HIJOS DE LA CUADRICULA*/
+    width: 100%; /*EL ELEMENTO OCUPA TODO EL ANCHO PERO NO SE PASA DE 1000PX*/
+    max-width: 1000px; /*EN PANTALLAS PEQUEÑAS MIDE EL 100% PERO EN GRANDES SE DETIENE A 1000PX*/
     margin: 0 auto;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 100px; /*AL HACER CLICK EN UN ENLACE PARA IR AHÍ, SE POSICIONA 100PX MAS ABAJO PARA QUE EL HEADER NO LO TAPE*/
 }
 
 .perspectiva-detalle h2 {
@@ -695,14 +505,12 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     border: 1px solid rgba(36, 62, 110, 0.1);
     border-radius: 24px;
     background: var(--blanco);
-    box-shadow: 0 16px 40px rgba(13, 24, 40, 0.08);
+    box-shadow: 0 16px 40px rgb(240, 242, 245);
 }
 
 .perspectiva-articulo-cabecera {
     max-width: 850px;
     margin: 0 auto 36px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid rgba(36, 62, 110, 0.16);
     text-align: center;
 }
 
@@ -710,14 +518,14 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     display: flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
+    width: fit-content; /*HACE QUE EL ELEMENTO MIDA LO QUE NECESITA SU CONTENIDO, SIN ESTIRARSE A TODO EL ANCHO PERO SIN PASARSE DEL ESPACIO QUE TIENE EL CONTENEDOR*/
     max-width: 100%;
     margin: 0 auto;
     padding: 14px 26px;
     border: 2px solid var(--naranja);
     border-radius: 999px;
     background-color: var(--gris-claro);
-    color: var(--azul-marino);
+    color: var(--azul-marino); /*DE LA LETRA*/
     font-family: var(--fuente-titulos);
     font-size: clamp(1.25rem, 3vw, 1.8rem);
     font-weight: 600;
@@ -727,14 +535,14 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .perspectiva-contenido {
-    color: var(--negro);
+    color: var(--negro); /*TEXTO DE LAS PERSPECTIVAS*/
 }
 
 .perspectiva-contenido p {
-    margin: 0 0 18px;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
+    margin: 0 0 18px; /*TODOS LOS PARRAFOS ESTAN SEPARADOS POR 18PX*/
+    text-align: justify; /*HACE QUE EL TEXTO QUEDE JUSTIFICADO DE IZQUIERDA A DERECHA, COMO EN WORD*/
+    text-justify: inter-word; /*PARA QUE EL TEXTO JUSTIFICADO DE ESTA MANERA, EL NAVEGADOR NECESITA DARLE ESPACIO EXTRA EN ALGUN LADO, LA LINEA ANTERIOR DECIDE DONDE LO AGREGA, EL INTER WORD REPARTE ESE ESPACIO ENTRE PALABRAS*/
+    hyphens: auto; /*LAS PALABRAS LARGAS AL FINAL DE LA LINEA SE SEPARAN POR EL GUION TIPICO DE LAS REGLAS DEL IDIOMA*/
 }
 
 .perspectiva-introduccion {
@@ -742,12 +550,12 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .perspectiva-bloque {
-    margin-top: 36px;
+    margin-top: 36px; /*SEPARA CADA BLOQUE 36px DEL ELEMENTO QUE TIENE ARRIBA*/
 }
 
 .perspectiva-contenido h3,
 .perspectiva-bloque h3,
-.perspectiva-llamado h3 {
+.perspectiva-llamado h3 { /*ULTIMO BLOQUE QUE APARECE AL FINAL*/
     margin: 28px 0 16px;
     color: var(--azul-marino);
     font-family: var(--fuente-titulos);
@@ -759,14 +567,14 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 
 .perspectiva-contenido ol,
 .perspectiva-contenido ul {
-    display: grid;
-    gap: 12px;
-    margin: 20px 0 0;
-    padding-left: 26px;
+    display: grid; /*CONTTOLA EL ESPACIO ENTRE LOS ITEMS <LI>*/
+    gap: 12px; /*SEPARACION ENTRE CADA UNO DE LOS ITEMS ENUMERADOS O EN VIÑETAS*/
+    margin: 20px 0 0; /*SEPARA LA LISTA DEL PARRAFO ANTERIOR*/
+    padding-left: 26px; /*SE DEJA ESTE ESPACIO PARA QUE LOS NUMEROS Y VIÑETAS SE DIBUJEN*/
 }
 
-.perspectiva-contenido li {
-    padding-left: 4px;
+.perspectiva-contenido li { /*LE HABLA A CADA ITEM INDIVIDUAL*/
+    padding-left: 4px;/*AGREGA ESTE VALOR DE ESPACIO INTERNO A LA IZQUIERDA DE CADA ITEM, ENTRE LA VIÑETA O NUMERO Y EL TEXTO*/
     line-height: 1.65;
 }
 
@@ -790,11 +598,11 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .ola { 
-    position: absolute;
+    position: absolute; /*LA OLA SE COLOCA LIBREMENTE DENTRO DE LA SECCIÓN, SIN EMPUJAR EL CONTENIDO*/
     top: -1px;   /*PEGADO JUSTO EN EL BORDE SUPERIOR DE LA SECCION*/
-    left: 0;
-    width: 100%;
-    height: 100px;
+    left: 0; /*LA OLA EMPIEXA PEGADA AL BORDE IZQUIERDO*/
+    width: 100%; /*LA CUBRE DE LADO A LADO*/
+    height: 100px; /*MIDE ESE VALOR*/
     display: block;
 }
 
@@ -817,7 +625,7 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     grid-template-columns: repeat(3, minmax(0, 1fr));   /*TRES COLUMNAS DE ANCHO EXACTAMENTE IDÉNTICO*/
     gap: 28px;
     margin: 40px;
-    align-items: stretch;   /*TODAS LAS TARJETAS MANTIENEN LA MISMA ALTURA Y ANCHURA*/
+    align-items: stretch;   /*TODAS LAS TARJETAS MANTIENEN LA MISMA ALTURA */
 }
 
 .servicios-grid article {
@@ -834,8 +642,8 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
+    min-width: 0; /*LE DICE AL ELEMENTO QUE PUEDE ENCOGERSE HASTA CUALQUIER ANCHO SIN UN MINUMO QUE LO OBLIGUE A MANTENERSE GRANDE*/
+    box-sizing: border-box; /*EL ANCHO Y EL ALTO INCLUYEN EL PADDING Y EL BORDE, ASÍ LAS CAJAS NO SE AGRANDAN*/
 }
 
 .servicios-grid article:hover {
@@ -870,15 +678,15 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .servicio-contenido {
-    max-height: 0;
-    overflow: hidden;
+    max-height: 0; /*CUANDO LA TARJETA ESTA CERRADA, EL CONTENIDO NO PUEDE OCUPAR NADA DE ALTO, ASI QUEDA OCULTO*/
+    overflow: hidden; /*RECORTA LO QUE SE SALGA DE LA CAJA PARA QUE NO SE VEA*/
     transition: max-height 0.4s ease, opacity 0.3s ease;
-    opacity: 0;
+    opacity: 0; /*TRANSPARENTE PARA QUE NO SE VEA*/
     width: 100%;
 }
 
 .servicios-grid article.abierto .servicio-contenido {
-    max-height: 350px;
+    max-height: 350px; /*AHORA SI, CUANDO ESTA ABIERTA PUEDE OCUPAR UN MAXIMO DE ESTE VALOR*/
     opacity: 1;
 }
 
@@ -942,16 +750,16 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 
 .experiencia-img {
     position: absolute;
-    top: 0;
+    top: 0; /*ESTA LINEA CON LA SIGUIENTE DEFINEN DONDE EMPIEZA LA IMAGEN, PEGADA ARRIBA Y A LA IZQUIERDA*/
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /*LA IMAGEN CUBRE TODO EL ESPACIO, RECORTA LO QUE SOBRE*/
     transition: transform 0.4s ease;
 }
 
 .experiencia-card:hover .experiencia-img {
-    transform: scale(1.05);
+    transform: scale(1.05); /*HACE QUE AL PASAR EL MOUSE, LA IMAGEN SE AGRANDE UN POCO*/
 }
 
 .experiencia-overlay {
