@@ -762,33 +762,33 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     transform: scale(1.05); /*HACE QUE AL PASAR EL MOUSE, LA IMAGEN SE AGRANDE UN POCO*/
 }
 
-.experiencia-overlay {
-    position: absolute;
-    inset: 0;
+.experiencia-overlay { /*CREA ESA CAPA TRANSPARENTOSA EN LOS RECUADROS DE EXPERIENCIA*/
+    position: absolute; /*HACE QUE SE PUEDA PONER POR ENCIMA DE LA IMAGEN SIN EMPUJAR NADA*/
+    inset: 0; /*ESTIRA LA CAPA HASTA LOS 4 BORDES, ASI CUBRE TODO*/
     background-color: var(--azul-marino);
     opacity: 0.65;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /*CAMBIO EN LA OPACIDAD DE MANERA SUAVE*/
 }
 
 .experiencia-card:hover .experiencia-overlay {
-    opacity: 0.5;
+    opacity: 0.5; /*CAMBIA DE OPACIDAD AL PASAR EL MOUSE*/
 }
 
-.experiencia-card h3 {
+.experiencia-card h3 { /*ESTILO AL TITULO*/
     position: relative;
-    z-index: 2;
+    z-index: 2; /*LO PONE POR ENCIMA DE ESA CAPA OVERLAY, 1IMAGEN, 2CAPA*/
     font-family: var(--fuente-titulos);
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--blanco);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; /*SEPARACION ENTRE CADA LETRA*/
     text-align: center;
     padding: 0 20px;
     margin: 0;
 }
 
-.divisor-secciones { /*LINEA DIVISORA ENTRE EXPERIENCIA Y CIFRAS*/
+.divisor-secciones { /*LINEA DIVISORA ENTRE SERVICIOS Y EXPERIENCIA*/
     border: none;
     border-top: 1px solid var(--gris-oscuro);
     margin: 0 40px;
@@ -848,7 +848,7 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     color: var(--azul-marino);
     margin: 0 0 10px 0;
     font-weight: 600;
-    order: 1;
+    order: 1; /*GENERA COMO UN ORDEN DE TEXTO, AQUI EL TEXTO DE LA TARJETA VA ARRIBA*/
 }
 
 .cifra-numero {
@@ -857,10 +857,10 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     font-weight: 600;
     color: var(--naranja);
     line-height: 1.1;
-    order: 2;
+    order: 2; /*AQUI EL NUMERO VA DEBAJO DEL TEXTO*/
 }
 
-.btn-cifra-toggle {
+.btn-cifra-toggle { /*BOTON DE MAS*/
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -875,9 +875,9 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     cursor: pointer;
     border: none;
     transition: background-color 0.2s ease, transform 0.2s ease;
-    order: 3;
+    order: 3; /*BOTON DEBAJO DEL NUMERO*/
     margin-top: 16px;
-    flex-shrink: 0;
+    flex-shrink: 0; /*LE DICE AL ELEMENTO QUE NO SE ENCOJA CUANDO EL CONTENEDOR FLEX SE QUEDA SIN ESPACIO, SI TUVIERA UNO, EL NAVEGADOR LOS COMPRIME, CON 0 SE NIEGA A COMPRIMIRSE, PODRIA CONVERTIRSE EN UN OVALO POR EJEMPLO*/
 }
 
 .btn-cifra-toggle:hover {
@@ -885,17 +885,17 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 .cifra-contenido {
-    max-height: 0;
+    max-height: 0; /*OCULTO CUANDO ESTA CERRADO*/
     overflow: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease;
-    opacity: 0;
+    opacity: 0; /*INVISIBLE*/
     width: 100%;
-    order: 4;
+    order: 4; /*TEXTO DEBAJO DEL BOTON*/
 }
 
 .cifra-card.abierto .cifra-contenido {
-    max-height: 200px;
-    opacity: 1;
+    max-height: 200px; /*MAXIMO DE ANCHO CUANDO SE PRESIONA EL BOTON Y APARECE EL CONTENIDO*/
+    opacity: 1; /*DEJA VER EL TEXTO NORMAL, VISIBLE*/
 }
 
 .cifra-contenido p {
@@ -907,11 +907,10 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     text-align: left;
 }
 
-/* ── SECCIÓN "NUESTROS CLIENTES" (Carrusel 3D Continuo) ── */
-#clientes {
+#clientes { /*SECCIÓN CLIENTES*/
     background-color: var(--blanco);
     padding: 72px 40px;
-    overflow: hidden;
+    overflow: hidden; /*RECORTA LO QUE SOBRESALE, SE VE LA PARTE QUE CABE DENTRO DE LA SECCION*/
 }
 
 .cliente-item a {
@@ -935,72 +934,71 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
 }
 
 /* Wrapper con efecto de rueda / cilindro sobresaliente 3D */
-.clientes-carousel-wrapper {
+.clientes-carousel-wrapper { /*EFECTO RUEDA*/
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 14px 0;
     border-radius: 30px;
-    background: linear-gradient(180deg, #f4f6f8 0%, var(--blanco) 25%, var(--blanco) 75%, #f4f6f8 100%);
+    background: linear-gradient(180deg, #f4f6f8 0%, var(--blanco) 25%, var(--blanco) 75%, #f4f6f8 100%); /*DEGRADADO VERTICAL, BLANCO AL CENTRO Y GRIS SUAVE ARRIBA Y ABAJO, COMO UNA RUEDA*/
     box-shadow: 
-        inset 0 8px 16px rgba(0, 0, 0, 0.06),
-        inset 0 -8px 16px rgba(0, 0, 0, 0.06),
-        0 14px 32px rgba(36, 62, 110, 0.09);
+        inset 0 8px 16px rgba(0, 0, 0, 0.06), /*ESTOS INSET DICEN QUE LA SOMBRA VA POR DENTRO DE LA CAJA*/
+        inset 0 -8px 16px rgba(0, 0, 0, 0.06), /*8PX SE DESPLAZA DESDE EL BORDE,TANTO ARRIBA COMO ABAJO CON 16PX DE DESENFOQUE Y 6% DE NEGRO DE OPACIDAD*/
+        0 14px 32px rgba(36, 62, 110, 0.09); /*SIN INSET, SOMBRA EXTERIOR, 14PX HACIA ABAJO 32 DE DESENFOQUE*/
     border: 1px solid rgba(190, 194, 198, 0.4);
-}
+} 
 
-/* Viewport con degradado en los extremos para profundidad 3D */
-.clientes-viewport {
+
+.clientes-viewport { /*VIEWPORT CON DEGRADADO EN LOS EXTREMOS PARA PROFUNDIDAD*/
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /*RECORTA LO QUE SALE*/
     position: relative;
     padding: 10px 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-}
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); /*DECIDE QUE PARTE DEL ELEMENTO SE VEN SEGUN LA OPACIDAD*/
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); /*LA MISMA PROPIEDAD CON PREFIJO DE NAVEGADORES, COMO SAFARI Y VERSIONES ANTIGUAS DE CHROME, ASEGURAR COMPATIBILIDAD*/
+} /*LA DIFERENCIA CON EL DEGRADADO ES QUE ERA VERTICAL Y ESTA ES UNA MASCARA HORIZONTAL*/
 
 /* Pista continua suave (Marquee infinito) */
-.clientes-track {
-    display: flex;
-    width: max-content;
-    animation: carrusel-infinito 28s linear infinite;
-    will-change: transform;
+.clientes-track { /*TIRA LARGA QUE TIENE TODOS LOS LOGOS QUE SE DESPLAZA DETRA DE LA VENTANA DE CLIENTES VIEWPORT*/
+    display: flex; /*PONE LOS HIJOS QUE SON LOS LOGOS EN FILA, UNO AL LADO DEL OTRO*/
+    width: max-content; /*LA PISTA MIDE LO QUE MIDE SU CONTENIDO, SIN ENCOGERSE*/
+    animation: carrusel-infinito 28s linear infinite; /*ANIMACION DEL CARRUSEL INFINITO DE 28 SEGUNDOS DE UN CICLO COMPLETO, MAS SEGUNDOS SERIA MAS LENTO, LINEAR PARA VELOCIDAD CONSANTE*/
+    will-change: transform; /*LE AVISA AL NAVEGADOR QUE EL ELEMENTOS VA A CAMBIAR PARA QUE LO OPTIMICE DE BUENA MANERA*/
 }
 
 .clientes-track:hover {
-    animation-play-state: paused;
+    animation-play-state: paused; /*INDICA QUE AL PASAR POR ENCIMA DEL LOGO, SE DETENGA LA ANIMACION*/
 }
 
-@keyframes carrusel-infinito {
-    0% {
-        transform: translateX(0);
+@keyframes carrusel-infinito { /*ANIMACION QUE SE MUEVE DE DERECHA A IZQUIERDA*/
+    0% { /*DEFINE QUE CAMBIA DESDE EL INICIO...*/
+        transform: translateX(0); /*INDICA QUE AL INICIO DEL CLICO, LA PISTA ESTA EN SU POSICION NORMAL, DESPLAZAMIENTO HORIZONTAL DE CERO*/
     }
-    100% {
-        transform: translateX(-50%);
+    100% { /*HASTA EL FIN*/
+        transform: translateX(-50%); /*AL FINAL DEL CICLO, LA PISTA SE HA MOVIDO HACIA LA IZQUIERDA EL 50% DE SU ANCHO*/
     }
 }
 
-/* Tarjetas uniformes con efecto 3D sobresaliente */
-.cliente-item {
+.cliente-item { /*TARJETAS DE CADA LOGO*/
     width: 190px;
     height: 95px;
-    flex-shrink: 0;
+    flex-shrink: 0; /*LE DICE AL ELEMENTO QUE NO SE ENCOJA CUANDO EL CONTENEDOR FLEX SE QUEDA SIN ESPACIO*/
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 20px;
-    margin: 0 10px;
+    padding: 14px 20px; /*ESPACIO ENTRE EL LOGO COMO TAL Y LOS BORDES*/
+    margin: 0 10px; /*ESPACIO ENTRE CADA TARJETA*/
     background-color: var(--blanco);
     border-radius: 18px;
-    box-sizing: border-box;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(239, 241, 244, 0.9);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box; /*INDICA QUE EL ANCHO Y EL ALTO INCLUYEN EL PADDING Y EL BORDE, ASI LAS CAJAS NO SE AGRANDAN*/
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(26, 28, 129, 0.753); /*DOS SOMRBAS PARA MAS REALIDAD*/
+    border: 1px solid rgba(224, 224, 224, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /*TRANSICION SUAVE PARA CUANDO SE HACE HOVER, CAMBIO DE POSICION SOMBRA Y COLOR DE BORDE*/
 }
 
 .cliente-item:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(36, 62, 110, 0.12);
+    transform: translateY(-4px) scale(1.03); /*AL PASAR EL MOUSE SE DESPLAZA Y SE AGRANDA UN POCO*/
+    box-shadow: 0 12px 24px rgba(36, 62, 110, 0.3); /*AL PASAR EL MOUSE, LA SOMBRA SE HACE MAS GRANDE Y MAS OSCURA*/
     border-color: var(--naranja);
 }
 
@@ -1009,40 +1007,24 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     max-height: 55px;
     width: auto;
     height: auto;
-    object-fit: contain;
-    filter: grayscale(25%);
-    opacity: 0.9;
-    transition: filter 0.3s ease, opacity 0.3s ease;
+    object-fit: contain; /*HACE QUE LA IMAGEN NO SE CORTE Y MANTENGA SUS PROPORCIONES*/
+    filter: grayscale(25%); /*HACE QUE LA IMAGEN SE VEA UN POCO GRIS PARA DARLE UN EFECTO NO TAN LLAMATIVO NI COLORIDO*/
+    opacity: 0.9; /*HACE QUE SE VEA UN POCO TRANSPARENTE*/
+    transition: filter 0.3s ease, opacity 0.3s ease; /*HACE QUE AL PASAR EL MOUSE EL COLOR SE VEA MEJOR Y LA OPACIDAD MAS SUAVE CON TRANSICION SUAVE*/
 }
 
-.cliente-item:hover .cliente-logo {
+.cliente-item:hover .cliente-logo { /*HACE LO CONTRARIO CUANDO SE PASA EL MOUSE, LE DA MAS VIDA*/
     filter: grayscale(0%);
     opacity: 1;
 }
 
-/* ════════════════════════════════════════════════════════════
-   SECCIÓN ENCUÉNTRANOS (RECTÁNGULO AZUL DE EXTREMO A EXTREMO)
-   ════════════════════════════════════════════════════════════ */
-.encuentranos-seccion {
+.encuentranos-seccion { /*SECCION DE CONTACTO*/
     width: 100%;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #1A3258 0%, #243E6E 52%, #142746 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Efecto de luz ambiental dentro del fondo de extremo a extremo */
-.encuentranos-seccion::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -10%;
-    width: 70%;
-    height: 180%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 65%);
-    pointer-events: none;
-    z-index: 0;
+    padding: 0; /*HAY UN MARGIN Y PADING PERO DE LA SECCION COMO TAL, LA INFORMACION SE VE MAS AL CENTRO POR OTRO BLOQUE, AQUI SE SEPARA EL FONDO DEL CONTENIDO*/
+    background: var(--azul-marino);
+    position: relative; /*INDICA QUE ES UN PUNTO DE REFERENCIA PARA LOS HIJOS*/
+    overflow: hidden; /*RECORTA LO QUE SOBRESALE DE LA SECCION*/
 }
 
 .encuentranos-contenedor {
@@ -1050,33 +1032,26 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     margin: 0 auto;
     width: 100%;
     padding: 75px 30px 35px;
-    position: relative;
-    z-index: 1;
-    box-sizing: border-box;
+    position: relative; /*INDICA QUE ES UN PUNTO DE REFERENCIA PARA LOS HIJOS*/
+    z-index: 1; /*INDICA QUE ESTE ELEMENTO ESTA POR ENCIMA DE OTROS ELEMENTOS, EN ESTE CASO EL FONDO DE LA SECCION*/
+    box-sizing: border-box; /*INDICA QUE EL ANCHO Y EL ALTO INCLUYEN EL PADDING Y EL BORDE, ASI LAS CAJAS NO SE AGRANDAN*/
 }
 
-/* Contenedor flexible principal */
-.encuentranos-rectangulo-azul {
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
+.encuentranos-rectangulo-azul { /*FONDO DE LA SECCION, EL RECTANGULO NO SE VE PERO TIENE ELEMENTOS QUE IMPORTAN EN DONDE ES LA PARTE IZQUIERDA DE LA SECCION*/
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 48px;
-    position: relative;
-    box-shadow: none;
-    border: none;
+    gap: 48px; /*SEPARACION ENTRE LAS DOS COLUMNAS, LA DE INFO Y LOS CONTACTOS */
+    position: relative; /*PUNTO DE REFERENCIA Y PERMITE USAR z-index EN SUS HIJOS*/
     width: 100%;
 }
 
-/* Columna Izquierda: Información de contacto */
-.encuentranos-col-info {
-    flex: 1 1 420px;
+.encuentranos-col-info { /*JULIAN Y DARWIN*/
+    flex: 1 1 420px; /*PUEDE CRECER Y ENCOGERSE SEGÚN EL ESPACIO; SU ANCHO DE PARTIDA ES 420px*/
     max-width: 480px;
     width: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 1; /*QUEDA POR ENCIMA DEL FONDO*/
 }
 
 .encuentranos-titulo {
@@ -1095,15 +1070,14 @@ nav {   /*NAV ES EL CONTENEDOR QUE AGRUPA LOS ENLACES DEL MENU DENTRO DEL HEADER
     max-width: 480px;
 }
 
-/* Botones / Canales de redes sociales */
-.encuentranos-canales {
+.encuentranos-canales { /*BOTONES DE IG Y WPP*/
     display: flex;
     flex-direction: column;
     gap: 13px;
     max-width: 400px;
 }
 
-.canal-item {
+.canal-item { 
     display: flex;
     align-items: center;
     gap: 16px;
